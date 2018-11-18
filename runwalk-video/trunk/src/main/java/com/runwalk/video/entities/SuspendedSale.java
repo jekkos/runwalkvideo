@@ -4,21 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 @Entity
 @SuppressWarnings("serial")
-@Table(name="ospos_sales_suspended")
+@Table(name="ospos_sales")
 public class SuspendedSale implements Serializable {
 	
 	@Id
@@ -37,6 +27,14 @@ public class SuspendedSale implements Serializable {
 	@Column(name="employee_id")
 	private Long employeeId;
 	
+	@Column(name="sale_status")
+    @Enumerated
+	private SaleStatus status;
+	
+	@Column(name="sale_type")
+    @Enumerated
+	private SaleType type;
+	
 	@OneToMany
 	@JoinColumn(name="sale_id")
 	private List<SuspendedSaleItem> saleItems;
@@ -53,6 +51,8 @@ public class SuspendedSale implements Serializable {
 	public SuspendedSale(Customer customer, Long employeeId) {
 		this.customer = customer;
 		this.employeeId = employeeId;
+		this.status = SaleStatus.SUSPENDED;
+		this.type = SaleType.POS;
 	}
 	
 	public Long getId() {
@@ -69,6 +69,14 @@ public class SuspendedSale implements Serializable {
 
 	public void setSaleTime(Date saleTime) {
 		this.saleTime = saleTime;
+	}
+	
+	public SaleStatus getStatus() {
+		return status;
+	}
+	
+	public SaleType getType() {
+		return type;
 	}
 
 	public Customer getCustomer() {
@@ -101,6 +109,14 @@ public class SuspendedSale implements Serializable {
 
 	public void setComment(String comment) {
 		this.comment = comment;
+	}
+	
+	public enum SaleType {
+		POS, INVOICE, WORK_ORDER, QUOTE, RETURN
+	}
+
+	public enum SaleStatus {
+		COMPLETED, SUSPENDED, CANCELLED
 	}
 	
 }

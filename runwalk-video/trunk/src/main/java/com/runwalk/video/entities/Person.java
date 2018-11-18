@@ -48,8 +48,6 @@ public abstract class Person extends SerializableEntity<Person> {
 	@Column(name = "gender")
 	@Enumerated(EnumType.ORDINAL)
 	private Gender gender;
-	@Column(name = "in_mailing_list")
-	private boolean inMailingList = true;
 	@Version
 	private int version;
 
@@ -67,14 +65,6 @@ public abstract class Person extends SerializableEntity<Person> {
 	
 	public Gender getGender() {
 		return gender;
-	}
-	
-	public boolean isInMailingList() {
-		return inMailingList;
-	}
-
-	public void setInMailingList(boolean inMailingList) {
-		this.inMailingList = inMailingList;
 	}
 
 	public String getEmailAddress() {

@@ -31,7 +31,9 @@ public class Customer extends Person {
 
 	@Column(name = "company_name")
 	private String companyName;
-	
+	@Column(name = "consent")
+	private boolean inMailingList = true;
+
 	public Customer() { }
 	
 	public Customer(String name, String firstName) {
@@ -75,4 +77,11 @@ public class Customer extends Person {
 		this.companyName = companyName;
 	}
 
+	public boolean isInMailingList() {
+		return inMailingList;
+	}
+
+	public void setInMailingList(boolean inMailingList) {
+		this.inMailingList = inMailingList;
+	}
 }

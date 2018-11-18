@@ -1,22 +1,20 @@
 package com.runwalk.video.entities;
 
+import com.google.common.base.Joiner;
+import com.google.common.collect.Lists;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Objects;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
 @SuppressWarnings("serial")
 @Table(name = "ospos_items")
 public class Item implements Serializable {
-	
+
+	public static final String FILTER_CATEGORY = "Schoenen";
 	@Id
 	@Column(name="item_id")
 	private Long id;
@@ -30,13 +28,12 @@ public class Item implements Serializable {
 	@Column(name="description")
 	private String description;
 
-	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="item_category_id", nullable=false )
-	private ItemCategory itemCategory;
-	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="item_size_id")
-	private ItemSize itemSize;
+	@Column(name="category")
+	private String category;
+
+	@OneToMany
+	@JoinColumn(name = "item_id")
+	private List<AttributeLink> attributeLinks;
 	
 	@Column(name="cost_price")
 	private BigDecimal costPrice;
@@ -60,18 +57,21 @@ public class Item implements Serializable {
 		return this.description;
 	}
 
-	public ItemCategory getItemCategory() {
-		return itemCategory;
-	}
-	
-	public ItemSize getItemSize() {
-		return itemSize;
-	}
-	
+	public List<String> getItemSizes() {
+
+		List<String> attributeValues = Lists.newArrayList();
+        for (AttributeLink attributeLink: attributeLinks) {
+        	if (attributeLink.getAttributeDefinition().getName().contains(FILTER_CATEGORY)) {
+				attributeValues.add(attributeLink.getAttributeValue().getValue());
+			}
+		}
+		return attributeValues;
+    }
+
 	private String getSizeAsString() {
-		return getItemSize() == null ?  "" : getItemSize().getSize();
+		return Joiner.on(", ").join(getItemSizes());
 	}
-	
+
 	public BigDecimal getCostPrice() {
 		return costPrice;
 	}

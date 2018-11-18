@@ -20,7 +20,7 @@ public class CreateOrUpdateSuspendedSaleTask extends AbstractTask<Void, Void> {
 	private final Customer customer;
 	private final Long employeeId;
 	private final Long locationId;
-	
+
 	public CreateOrUpdateSuspendedSaleTask(DaoService daoService, Customer customer, Item oldItem, Item newItem, Long employeeId, Long locationId) {
 		super("createOrUpdateSuspendedSale");
 		this.daoService = daoService;

@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @SuppressWarnings("serial")
 @Entity
-@Table(name="ospos_sales_suspended_items")
+@Table(name="ospos_sales_items")
 public class SuspendedSaleItem implements Serializable {
 	
 	public static final BigDecimal DEFAULT_DISCOUNT = BigDecimal.valueOf(10.0d);
@@ -33,8 +33,11 @@ public class SuspendedSaleItem implements Serializable {
 	@Column(name="item_cost_price")
 	private BigDecimal costPrice;
 	
-	@Column(name="discount_percent")
+	@Column(name="discount")
 	private BigDecimal discountPercent = DEFAULT_DISCOUNT;
+	
+	@Column(name="discount_type")
+	private DiscountType discountType;
 
 	@Column(name="item_location")
 	private Long locationId;
@@ -44,6 +47,7 @@ public class SuspendedSaleItem implements Serializable {
 	public SuspendedSaleItem(SuspendedSale suspendedSale, Item item, Customer customer, Long locationId) {
 		this(suspendedSale, item);
 		quantity = DEFAULT_QUANTITY;
+		discountType = DiscountType.PERCENT;
 		costPrice = item.getCostPrice();
 		unitPrice = item.getUnitPrice();
 		this.locationId = locationId;
@@ -63,6 +67,10 @@ public class SuspendedSaleItem implements Serializable {
 	
 	public Long getSaleId() {
 		return id.saleId;
+	}
+	
+	public DiscountType getDiscountType() {
+		return discountType;
 	}
 	
 	public int getQuantity() {
@@ -107,6 +115,10 @@ public class SuspendedSaleItem implements Serializable {
 	
 	public Long getItemId() {
 		return id.itemId;
+	}
+	
+	public enum DiscountType {
+		PERCENT, FIXED		
 	}
 	
 	@Embeddable

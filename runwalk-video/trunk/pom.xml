@@ -3,7 +3,7 @@
 	<groupId>com.runwalk</groupId>
 	<artifactId>runwalk-video</artifactId>
 	<packaging>jar</packaging>
-	<version>0.5-SNAPSHOT</version>
+	<version>0.6-SNAPSHOT</version>
 	<name>runwalk-video</name>
 	<url>https://www.runwalk.be</url>
 	<description>Beheer van klanten en loopanalyses</description>
@@ -605,7 +605,7 @@
 		<timestamp>${maven.build.timestamp}</timestamp>
 		<maven.build.timestamp.format>ddMMyyyy-HHmmss</maven.build.timestamp.format>
 		<dsj.version>0.8.64</dsj.version>
-		<ueye.version>0.5</ueye.version>
+		<ueye.version>0.6-SNAPSHOT</ueye.version>
 		<aspectj.version>1.8.1</aspectj.version>
 		<!-- Keystore generation properties -->
 		<keystore.dnameCn>www.runwalk.be</keystore.dnameCn>

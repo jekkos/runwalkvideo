@@ -15,7 +15,7 @@ public class ItemDao extends JpaDao<Item> {
 
 	public Item getItemByItemNumber(String itemNumber) {
 		TypedQuery<Item> query = createEntityManager().createQuery(
-				"SELECT item from " + getTypeParameter().getSimpleName() + " item LEFT JOIN FETCH item.attributeLinks WHERE item.itemNumber = :itemNumber", Item.class);
+				"SELECT DISTINCT item from " + getTypeParameter().getSimpleName() + " item LEFT JOIN FETCH item.attributeLinks WHERE item.itemNumber = :itemNumber", Item.class);
 		query.setParameter("itemNumber", itemNumber);
 		return query.getSingleResult();
 	}

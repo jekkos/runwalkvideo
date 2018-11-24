@@ -1,13 +1,11 @@
 package com.runwalk.video.entities;
 
-import java.io.Serializable;
-import java.math.BigDecimal;
-
 import javax.persistence.Column;
-import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
+import java.math.BigDecimal;
 
 @SuppressWarnings("serial")
 @Entity
@@ -66,7 +64,7 @@ public class SuspendedSaleItem implements Serializable {
 	}
 	
 	public Long getSaleId() {
-		return id.saleId;
+		return id.getSaleId();
 	}
 	
 	public DiscountType getDiscountType() {
@@ -114,57 +112,11 @@ public class SuspendedSaleItem implements Serializable {
 	}
 	
 	public Long getItemId() {
-		return id.itemId;
+		return id.getItemId();
 	}
 	
 	public enum DiscountType {
 		PERCENT, FIXED		
-	}
-	
-	@Embeddable
-	public static class SuspendedSaleItemKey implements Serializable {
-		
-		public SuspendedSaleItemKey() {	}
-
-		public SuspendedSaleItemKey(SuspendedSale suspendedSale, Item item) {
-			saleId = suspendedSale.getId();
-			itemId = item.getId();
-			line = suspendedSale.getSaleItems().size();
-		}
-
-		@Column(name="sale_id")
-		private Long saleId;
-		
-		@Column(name="item_id")
-		private Long itemId;
-		
-		@Column(name = "line")
-		private int line;
-
-		public Long getSaleId() {
-			return saleId;
-		}
-
-		public void setSaleId(Long saleId) {
-			this.saleId = saleId;
-		}
-
-		public Long getItemId() {
-			return itemId;
-		}
-
-		public void setItemId(Long itemId) {
-			this.itemId = itemId;
-		}
-
-		public int getLine() {
-			return line;
-		}
-
-		public void setLine(int line) {
-			this.line = line;
-		}
-		
 	}
 	
 }

@@ -31,6 +31,7 @@ public class Customer extends Person {
 
 	@Column(name = "company_name")
 	private String companyName;
+
 	@Column(name = "consent")
 	private boolean inMailingList = true;
 

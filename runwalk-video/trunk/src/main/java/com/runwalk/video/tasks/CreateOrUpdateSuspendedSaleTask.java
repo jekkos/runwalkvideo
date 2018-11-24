@@ -1,9 +1,13 @@
 package com.runwalk.video.tasks;
 
 import java.util.Iterator;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import javax.persistence.NoResultException;
 
+import com.runwalk.video.dao.Dao;
 import com.runwalk.video.dao.DaoService;
 import com.runwalk.video.dao.jpa.SuspendedSaleDao;
 import com.runwalk.video.entities.Customer;
@@ -49,12 +53,16 @@ public class CreateOrUpdateSuspendedSaleTask extends AbstractTask<Void, Void> {
 	}
 
 	private void replaceSuspendedSaleItems(SuspendedSale suspendedSale) {
-		Iterator<SuspendedSaleItem> iterator = suspendedSale.getSaleItems().iterator();
-		while (oldItem != null && iterator.hasNext()) {
-			SuspendedSaleItem suspendedSaleItem = iterator.next();
+		Iterator<SuspendedSaleItem> saleItemIterator = suspendedSale.getSaleItems().iterator();
+		while (oldItem != null && saleItemIterator.hasNext()) {
+			SuspendedSaleItem suspendedSaleItem = saleItemIterator.next();
 			if (suspendedSaleItem.getItemId().equals(getOldItem().getId())) {
+				Dao<SuspendedSaleItemTax> suspendedSaleItemTaxDao = getDaoService().getDao(SuspendedSaleItemTax.class);
+				suspendedSale.getSaleItemTaxes().stream()
+						.filter(saleItemTax -> saleItemTax.getId().equals(suspendedSaleItem.getId()))
+						.forEach(saleItemTax -> suspendedSaleItemTaxDao.delete(saleItemTax));
 				getDaoService().getDao(SuspendedSaleItem.class).delete(suspendedSaleItem);
-				iterator.remove();
+				saleItemIterator.remove();
 			}
 		}
 	}

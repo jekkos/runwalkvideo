@@ -18,7 +18,7 @@ public class SuspendedSaleItemTax {
 	public static final BigDecimal DEFAULT_VAT_PCT = BigDecimal.valueOf(21d);
 
 	@EmbeddedId
-	private SuspendedSaleItemTaxKey id;
+	private SuspendedSaleItemKey id;
 	
 	@Column(name="name")
 	private String name = DEFAULT_VAT_NAME;
@@ -28,24 +28,24 @@ public class SuspendedSaleItemTax {
 	
 	public SuspendedSaleItemTax() {	}
 	
-	public SuspendedSaleItemTax(SuspendedSaleItemTaxKey suspendedSaleItemKey) {
+	public SuspendedSaleItemTax(SuspendedSaleItemKey suspendedSaleItemKey) {
 		id = suspendedSaleItemKey;
 	}
 	
 	public SuspendedSaleItemTax(SuspendedSale suspendedSale, Item item) {
-		this(new SuspendedSaleItemTaxKey(item, suspendedSale));
+		this(new SuspendedSaleItemKey(suspendedSale, item));
 	}	
 
-	public SuspendedSaleItemTax(String name, BigDecimal percent) {
+	public SuspendedSaleItemTax(String name, BigDecimal prcent) {
 		this.name = name;
 		this.percent = percent;
 	}
 
-	public SuspendedSaleItemTaxKey getId() {
+	public SuspendedSaleItemKey getId() {
 		return id;
 	}
 
-	public void setId(SuspendedSaleItemTaxKey id) {
+	public void setId(SuspendedSaleItemKey id) {
 		this.id = id;
 	}
 
@@ -63,53 +63,6 @@ public class SuspendedSaleItemTax {
 
 	public void setPercent(BigDecimal percent) {
 		this.percent = percent;
-	}
-	
-	@SuppressWarnings("serial")
-	@Embeddable
-	public static class SuspendedSaleItemTaxKey implements Serializable {
-		
-		@Column(name="item_id", nullable=false)
-		private Long itemId;
-		
-		@Column(name = "sale_id", nullable=false)
-		private Long saleId;
-		
-		@Column(name = "line")
-		private int line;
-		
-		public SuspendedSaleItemTaxKey() { }
-		
-		public SuspendedSaleItemTaxKey(Item item, SuspendedSale suspendedSale) {
-			itemId = item.getId();
-			saleId = suspendedSale.getId();
-			line = suspendedSale.getSaleItems().size();
-		}
-
-		public Long getItemId() {
-			return itemId;
-		}
-
-		public void setItemId(Long itemId) {
-			this.itemId = itemId;
-		}
-
-		public Long getSaleId() {
-			return saleId;
-		}
-
-		public void setSaleId(Long saleId) {
-			this.saleId = saleId;
-		}
-
-		public int getLine() {
-			return line;
-		}
-
-		public void setLine(int line) {
-			this.line = line;
-		}
-		
 	}
 
 }

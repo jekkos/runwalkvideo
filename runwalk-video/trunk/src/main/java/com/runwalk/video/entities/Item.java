@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @SuppressWarnings("serial")
@@ -33,7 +34,7 @@ public class Item implements Serializable {
 
 	@OneToMany
 	@JoinColumn(name = "item_id")
-	private List<AttributeLink> attributeLinks;
+	private Set<AttributeLink> attributeLinks;
 	
 	@Column(name="cost_price")
 	private BigDecimal costPrice;
@@ -61,7 +62,7 @@ public class Item implements Serializable {
 
 		List<String> attributeValues = Lists.newArrayList();
         for (AttributeLink attributeLink: attributeLinks) {
-        	if (attributeLink.getAttributeDefinition().getName().contains(FILTER_CATEGORY)) {
+        	if (attributeLink.isCurrentValue() && attributeLink.getAttributeDefinition().getName().contains(FILTER_CATEGORY)) {
 				attributeValues.add(attributeLink.getAttributeValue().getValue());
 			}
 		}

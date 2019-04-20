@@ -25,6 +25,12 @@ public class AttributeLink implements Serializable {
 	@JoinColumn(name = "item_id")
 	private Item item;
 
+	@Column(name = "sale_id")
+	private Long saleId;
+
+	@Column(name = "receiving_id")
+	private Long receivingId;
+
 	public AttributeDefinition getAttributeDefinition() {
 		return attributeDefinition;
 	}
@@ -36,6 +42,10 @@ public class AttributeLink implements Serializable {
 	public AttributeValue getAttributeValue() {
 		return attributeValue;
 	}
+
+	public boolean isCurrentValue() {
+	    return saleId == null && receivingId == null;
+    }
 
 	@Embeddable
 	public static class AttributeLinkId implements Serializable {

@@ -4,6 +4,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.EventListener;
 
+import ca.odell.glazedlists.ObservableElementChangeHandler;
 import ca.odell.glazedlists.ObservableElementList;
 import ca.odell.glazedlists.ObservableElementList.Connector;
 
@@ -13,11 +14,11 @@ import com.runwalk.video.panels.AbstractTablePanel;
 
 public class AbstractEntityModelConnector<T extends AbstractEntityModel<? extends SerializableEntity<?>>> implements Connector<T> {
 
-	/** The list which contains the elements being observed via this {@link ObservableElementList.Connector}. */
-	private ObservableElementList<? extends T> list;
+	/** The change handler which contains the elements being observed via this {@link ObservableElementList.Connector}. */
+	private ObservableElementChangeHandler<? extends T> changeHandler;
 
 	/** The PropertyChangeListener to install on each list element. */
-	protected final PropertyChangeListener propertyChangeListener = createPropertyChangeListener();
+	protected PropertyChangeListener propertyChangeListener = createPropertyChangeListener();
 	
 	protected final AbstractTablePanel<?> tablePanel;
 
@@ -34,8 +35,9 @@ public class AbstractEntityModelConnector<T extends AbstractEntityModel<? extend
 		element.removePropertyChangeListener(propertyChangeListener);
 	}
 
-	public void setObservableElementList(ObservableElementList<? extends T> list) {
-		this.list = list;
+	@Override
+	public void setObservableElementList(ObservableElementChangeHandler<? extends T> observableElementChangeHandler) {
+		this.changeHandler = observableElementChangeHandler;
 	}
 
 	/**
@@ -52,11 +54,10 @@ public class AbstractEntityModelConnector<T extends AbstractEntityModel<? extend
 	public class PropertyChangeHandler implements PropertyChangeListener {
 		
 		public void propertyChange(PropertyChangeEvent event) {
-			AbstractEntityModel<?> sourceModel = null;
-			sourceModel = (AbstractEntityModel<?>) event.getSource();
+			AbstractEntityModel<?> sourceModel = (AbstractEntityModel<?>) event.getSource();
 			sourceModel.setDirty(true);
 			tablePanel.setDirty(true);
-			list.elementChanged(sourceModel);
+			changeHandler.elementChanged(sourceModel);
 		}
 		
 	}

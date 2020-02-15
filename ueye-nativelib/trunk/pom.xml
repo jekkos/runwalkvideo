@@ -119,14 +119,14 @@
 			</activation>
 			<properties>
 				<architecture>x86</architecture>
-			  <dllPath>Release</dllPath>
-      </properties>
+	 			<dllPath>Release</dllPath>
+			</properties>
 		</profile>
 		<profile>
-			<id>amd64</id>
+			<id>x64</id>
 			<properties>
 				<!-- amd64 dll path properties -->
-				<architecture>amd64</architecture>
+				<architecture>x64</architecture>
 				<dllPath>Release</dllPath>
 			</properties>
 		</profile>

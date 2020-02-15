@@ -12,7 +12,7 @@
         <connection>scm:git:https://github.com/jekkos/runwalkvideo.git</connection>
 		<developerConnection>scm:git:https://github.com/jekkos/runwalkvideo.git</developerConnection>
 		<url>scm:git:https://github.com/jekkos/runwalkvideo.git</url>
-	  <tag>runwalk-video-0.5</tag>
+	  <tag>runwalk-video-0.6</tag>
   </scm>
 	<organization>
 		<name>Runwalk Herentals</name>
@@ -71,9 +71,9 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
+				<groupId>com.nickwongdev</groupId>
 				<artifactId>aspectj-maven-plugin</artifactId>
-				<version>1.11</version>
+				<version>1.12.1</version>
 				<executions>
 					<execution>
 						<goals>
@@ -99,7 +99,7 @@
             <plugin>
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections-maven</artifactId>
-                <version>0.9.8</version>
+		<version>0.9.9-RC2</version>
 				<executions>
 					<execution>
                         <phase>process-classes</phase>
@@ -478,9 +478,9 @@
 			<version>1.02</version>
 		</dependency>
 		<dependency>
-			<groupId>net.java.dev.glazedlists</groupId>
-			<artifactId>glazedlists_java15</artifactId>
-			<version>1.9.1</version>
+			<groupId>at.swimmesberger</groupId>
+			<artifactId>glazedlists</artifactId>
+			<version>1.13.0</version>
 		</dependency>
 		<!-- Persistence libraries -->
 		<dependency>
@@ -491,40 +491,45 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.27</version>
+			<version>5.1.48</version>
 		</dependency>
 		<dependency>
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>
-			<version>0.9.5-pre6</version>
+			<version>0.9.5.5</version>
 		</dependency>
 		<dependency>
-		    <groupId>javax.xml.bind</groupId>
-		    <artifactId>jaxb-api</artifactId>
-		    <version>2.2.11</version>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.3.1</version>
 		</dependency>
 		<dependency>
 		    <groupId>com.sun.xml.bind</groupId>
 		    <artifactId>jaxb-core</artifactId>
-		    <version>2.2.11</version>
+		    <version>2.3.0.1</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.sun.xml.bind</groupId>
+		    <artifactId>jaxb-impl</artifactId>
+		    <version>2.3.0.1</version>
 		</dependency>
 	</dependencies>
 	<repositories>
 		<repository>
 			<id>central</id>
 			<name>Maven Plugin Repository</name>
-			<url>http://repo1.maven.org/maven2</url>
+			<url>https://repo1.maven.org/maven2</url>
 		</repository>
         <repository>
             <id>runwalk</id>
-            <url>http://www.maven2.runwalk.be/</url>
+            <url>https://www.maven2.runwalk.be/</url>
         </repository>
 	</repositories>
     <pluginRepositories>
         <pluginRepository>
             <id>runwalk</id>
             <name>runwalk-plugins</name>
-            <url>http://maven2.runwalk.be</url>
+            <url>https://maven2.runwalk.be</url>
         </pluginRepository>
     </pluginRepositories>
 	<distributionManagement>
@@ -595,7 +600,7 @@
                 <activeByDefault>false</activeByDefault>
                 <os>
                     <family>unix</family>
-		    <name>linux</name>
+		    		<name>linux</name>
                 </os>
             </activation>
         </profile>
@@ -604,9 +609,9 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<timestamp>${maven.build.timestamp}</timestamp>
 		<maven.build.timestamp.format>ddMMyyyy-HHmmss</maven.build.timestamp.format>
-		<dsj.version>0.8.64</dsj.version>
+		<dsj.version>0.8.90</dsj.version>
 		<ueye.version>0.6-SNAPSHOT</ueye.version>
-		<aspectj.version>1.8.1</aspectj.version>
+		<aspectj.version>1.9.5</aspectj.version>
 		<!-- Keystore generation properties -->
 		<keystore.dnameCn>www.runwalk.be</keystore.dnameCn>
 		<keystore.dnameO>Runwalk Herentals</keystore.dnameO>

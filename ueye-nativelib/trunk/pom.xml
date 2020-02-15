@@ -4,15 +4,16 @@
 	<groupId>com.runwalk</groupId>
 	<artifactId>ueye-nativelib</artifactId>
 	<packaging>jar</packaging>
-	<version>0.6-SNAPSHOT</version>
+	<version>0.7-SNAPSHOT</version>
 	<name>Native bindings for the uEye camera</name>
 	<url>http://www.ids-imaging.com</url>
 	<inceptionYear>2010</inceptionYear>
-	<scm>
-		<connection>scm:svn:https://runwalkvideo.googlecode.com/svn/ueye-nativelib/trunk</connection>
-		<developerConnection>scm:svn:https://runwalkvideo.googlecode.com/svn/ueye-nativelib/trunk</developerConnection>
-		<url>scm:svn:https://runwalkvideo.googlecode.com/svn/ueye-nativelib/trunk</url>
-	</scm>
+  <scm>
+    <connection>scm:git:https://github.com/jekkos/runwalkvideo.git</connection>
+    <developerConnection>scm:git:https://github.com/jekkos/runwalkvideo.git</developerConnection>
+    <url>scm:git:https://github.com/jekkos/runwalkvideo.git</url>
+    <tag>ueye-nativelib-video-0.7</tag>
+  </scm>
 	<organization>
 		<name>Runwalk Herentals</name>
 		<url>http://code.google.com/p/runwalkvideo/</url>
@@ -50,7 +51,7 @@
 				<version>2.3.2</version>
 				<configuration>
 				  <finalName>${jarName}</finalName>            
-				  <classesDirectory>${project.build.directory}/${architecture}/${dllPath}</classesDirectory>
+				  <classesDirectory>${project.build.directory}/${dllPath}</classesDirectory>
 				  <includes>
 					 <include>*.dll</include>
 				  </includes>
@@ -94,7 +95,7 @@
 							<file>target/${jarName}.jar</file>
 							<version>${project.version}</version>
 							<uniqueVersion>false</uniqueVersion>
-        					<ftp.url>ftp://${ftp.url}</ftp.url>
+			        		<ftp.url>${ftp.url}</ftp.url>
 							<repositoryId>runwalk-ftp</repositoryId>
 							<packaging>jar</packaging>
 							<classifier>natives-win-${architecture}</classifier>
@@ -119,15 +120,15 @@
 			</activation>
 			<properties>
 				<architecture>x86</architecture>
-	 			<dllPath>Release</dllPath>
+	 			<dllPath>x86/Release</dllPath>
 			</properties>
 		</profile>
 		<profile>
-			<id>x64</id>
+			<id>amd64</id>
 			<properties>
 				<!-- amd64 dll path properties -->
-				<architecture>x64</architecture>
-				<dllPath>Release</dllPath>
+				<architecture>amd64</architecture>
+				<dllPath>x64/Release</dllPath>
 			</properties>
 		</profile>
 	</profiles>

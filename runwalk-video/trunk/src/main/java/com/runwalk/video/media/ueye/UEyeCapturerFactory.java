@@ -56,11 +56,11 @@ public class UEyeCapturerFactory extends VideoCapturerFactory<UEyeCapturerSettin
 		// read struct information back into java
 		uEyeCameraList.read();
 		// enumerate available camera's
-		for (int i = 0 ; i < uEyeCameraList.dwCount; i ++) {
+		for (int i = 0 ; i < uEyeCameraList.dwCount.intValue(); i ++) {
 			UEyeCameraInfo cameraInfo = uEyeCameraList.uci[i];
-			if (!cameraInfo.dwInUse) {
+			if (cameraInfo.dwInUse != 0) {
 				// copy the struct's info into this map to prevent memory leaking
-				cameraNameIdMap.put(cameraInfo.getModelInfo(), cameraInfo.dwCameraID);
+				cameraNameIdMap.put(new String(cameraInfo.Model), cameraInfo.dwCameraID);
 			}
 		}
 		return cameraNameIdMap.keySet();

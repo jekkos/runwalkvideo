@@ -22,6 +22,7 @@ public class DataSourceBuilder {
 	private static final String CHARACTER_SET_RESULTS = "characterSetResults";
 	private static final String CONNECTION_COLLATION = "connectionCollation";
 	private static final String USE_UNICODE = "useUnicode";
+	private static final String SSL = "useSSL";
 	private static final String ZERO_TIME_BEHAVIOR = "zeroDateTimeBehavior";
 	private static final String CONVERT_TO_NULL = "convertToNull";
 	
@@ -29,7 +30,8 @@ public class DataSourceBuilder {
 	
 	static {
 		Builder<String, String> builder = ImmutableMap.builder();
-		builder.put(USE_UNICODE, Boolean.TRUE.toString());
+		//builder.put(USE_UNICODE, Boolean.TRUE.toString());
+		builder.put(SSL, Boolean.FALSE.toString());
 		builder.put(CONNECTION_COLLATION, UTF8_GENERAL_CI);
 		builder.put(CHARACTER_SET_RESULTS, UTF8);
 		builder.put(ZERO_TIME_BEHAVIOR, CONVERT_TO_NULL);
@@ -63,7 +65,7 @@ public class DataSourceBuilder {
 	}
 
 	public String buildJdbcUrl(Map<String, String> options) {
-		Joiner.MapJoiner joiner = Joiner.on("&amp;").withKeyValueSeparator("=");
+		Joiner.MapJoiner joiner = Joiner.on("&").withKeyValueSeparator("=");
 		return databaseSettings.getUrl() + "?" + joiner.join(options);
 	}
 	

@@ -87,6 +87,11 @@
 					<complianceLevel>1.8</complianceLevel>
 					<source>1.8</source>
 					<target>1.8</target>
+					<sources>
+						<source>
+							<basedir>src/main/aspect</basedir>
+						</source>
+					</sources>
 				</configuration>
 				<dependencies>
 					<dependency>

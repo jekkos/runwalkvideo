@@ -4,7 +4,7 @@
 	<groupId>com.runwalk</groupId>
 	<artifactId>ueye-nativelib</artifactId>
 	<packaging>jar</packaging>
-	<version>0.8-SNAPSHOT</version>
+	<version>0.7</version>
 	<name>Native bindings for the uEye camera</name>
 	<url>http://www.ids-imaging.com</url>
 	<inceptionYear>2010</inceptionYear>
@@ -12,7 +12,7 @@
     <connection>scm:git:https://github.com/jekkos/runwalkvideo.git</connection>
     <developerConnection>scm:git:https://github.com/jekkos/runwalkvideo.git</developerConnection>
     <url>scm:git:https://github.com/jekkos/runwalkvideo.git</url>
-    <tag>ueye-nativelib-video-0.7</tag>
+    <tag>ueye-nativelib-0.7</tag>
   </scm>
 	<organization>
 		<name>Runwalk Herentals</name>

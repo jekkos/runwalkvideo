@@ -3,6 +3,7 @@ package com.runwalk.video.media.ueye;
 import java.util.Collection;
 import java.util.Map;
 
+import com.sun.jna.Native;
 import com.sun.jna.WString;
 import org.apache.log4j.Logger;
 
@@ -61,7 +62,7 @@ public class UEyeCapturerFactory extends VideoCapturerFactory<UEyeCapturerSettin
 			UEyeCameraInfo cameraInfo = uEyeCameraList.uci[i];
 			if (cameraInfo.dwInUse == 0) {
 				// copy the struct's info into this map to prevent memory leaking
-				String cameraModel = new WString(new String(cameraInfo.Model)).toString();
+				String cameraModel = Native.toString(cameraInfo.Model);
 				cameraNameIdMap.put(cameraModel, cameraInfo.dwCameraID);
 			}
 		}

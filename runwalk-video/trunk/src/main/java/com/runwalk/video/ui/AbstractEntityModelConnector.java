@@ -18,8 +18,8 @@ public class AbstractEntityModelConnector<T extends AbstractEntityModel<? extend
 	private ObservableElementChangeHandler<? extends T> changeHandler;
 
 	/** The PropertyChangeListener to install on each list element. */
-	protected PropertyChangeListener propertyChangeListener = createPropertyChangeListener();
-	
+	protected final PropertyChangeListener propertyChangeListener = createPropertyChangeListener();
+
 	protected final AbstractTablePanel<?> tablePanel;
 
 	public AbstractEntityModelConnector(AbstractTablePanel<?> tablePanel) {
@@ -49,12 +49,12 @@ public class AbstractEntityModelConnector<T extends AbstractEntityModel<? extend
 	}
 
 	/**
-	 * This inner class notifies the {@link ObservableElementList} about changes to list elements.
+	 * This inner class notifies the {@link ObservableElementChangeHandler} about changes to list elements.
 	 */
 	public class PropertyChangeHandler implements PropertyChangeListener {
-		
+
 		public void propertyChange(PropertyChangeEvent event) {
-			AbstractEntityModel<?> sourceModel = (AbstractEntityModel<?>) event.getSource();
+			AbstractEntityModel<?> sourceModel = (AbstractEntityModel<?>) event.getSource();;
 			sourceModel.setDirty(true);
 			tablePanel.setDirty(true);
 			changeHandler.elementChanged(sourceModel);

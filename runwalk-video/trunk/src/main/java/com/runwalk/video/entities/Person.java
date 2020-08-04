@@ -156,7 +156,7 @@ public abstract class Person extends SerializableEntity<Person> {
 	 * Changing the order of declaration of the constants will change the parsed values in the application!
 	 */
 	public enum Gender {
-		FEMALE, MALE;
+		FEMALE, MALE, X;
 	}
 	
 	public enum PersonType {

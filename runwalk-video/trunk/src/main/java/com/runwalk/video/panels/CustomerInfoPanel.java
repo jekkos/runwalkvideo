@@ -280,11 +280,18 @@ public class CustomerInfoPanel extends AbstractPanel {
 		femaleRadioButton.setText(getResourceMap().getString("femaleRadioButton.text")); // NOI18N
 		enabledBinding = Bindings.createAutoBinding(UpdateStrategy.READ, customerTablePanel, ITEM_SELECTED, femaleRadioButton, ENABLED);
 		bindingGroup.addBinding(enabledBinding);
-		add(femaleRadioButton, "wrap, gapright push");
+		add(femaleRadioButton);
+
+		JRadioButton lgbtqRadioButton = new JRadioButton();
+		lgbtqRadioButton.setText(getResourceMap().getString("lgbtqRadioButton.text")); // NOI18N
+		enabledBinding = Bindings.createAutoBinding(UpdateStrategy.READ, customerTablePanel, ITEM_SELECTED, lgbtqRadioButton, ENABLED);
+		bindingGroup.addBinding(enabledBinding);
+		add(lgbtqRadioButton, "wrap, gapright push");
 		//create a model for the radio buttons
 		EnumButtonGroup<Gender> ebg = new EnumButtonGroup<Gender>(Gender.class);
 		ebg.add(Gender.FEMALE, femaleRadioButton);
 		ebg.add(Gender.MALE, maleRadioButton);
+		ebg.add(Gender.X, lgbtqRadioButton);
 		ebg.assertButtonGroupCoversAllEnumConstants();
 		//add the binding for the radio buttons
 		BeanProperty<CustomerTablePanel, Gender> gender = BeanProperty.create("selectedItem.entity.gender");

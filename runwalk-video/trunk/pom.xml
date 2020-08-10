@@ -83,8 +83,8 @@
 					<execution>
 						<goals>
 							<goal>compile</goal>       <!-- use this goal to weave all your main classes -->
+							<goal>test-compile</goal>  <!-- use this goal to weave all your test classes -->
 						</goals>
-						<phase>compile</phase>
 					</execution>
 				</executions>
 				<configuration>
@@ -92,6 +92,11 @@
 					<complianceLevel>1.8</complianceLevel>
 					<source>1.8</source>
 					<target>1.8</target>
+					<sources>
+						<source>
+							<basedir>src/main/aspect</basedir>
+						</source>
+					</sources>
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -104,7 +109,7 @@
             <plugin>
                 <groupId>org.reflections</groupId>
                 <artifactId>reflections-maven</artifactId>
-				<version>0.9.9-RC2</version>
+		<version>0.9.9-RC2</version>
 				<executions>
 					<execution>
                         <phase>process-classes</phase>
@@ -314,6 +319,74 @@
 				<version>2.5</version>
 			</extension>
 		</extensions>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-dependency-plugin</artifactId>
+										<versionRange>[2.0,)</versionRange>
+										<goals>
+											<goal>unpack</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.reflections
+										</groupId>
+										<artifactId>
+											reflections-maven
+										</artifactId>
+										<versionRange>
+											[0.9.8,)
+										</versionRange>
+										<goals>
+											<goal>reflections</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											aspectj-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.4,)
+										</versionRange>
+										<goals>
+											<goal>compile</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 	<dependencies>
         <dependency>
@@ -429,7 +502,7 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.49</version>
+			<version>5.1.48</version>
 		</dependency>
 		<dependency>
 			<groupId>com.mchange</groupId>
@@ -567,9 +640,9 @@
 		<jnlpOutputFilename>runwalk-video-${project.version}.jnlp</jnlpOutputFilename>
 		<!-- JNLP deployment properties -->
 		<ftp.url>ftp.runwalk.be</ftp.url>
-		<ftp.user>runwalk</ftp.user>
-		<ftp.password>Neorej33</ftp.password>
-		<ftp.remotedir>public_html/uploads/jnlp-0.7</ftp.remotedir>
+		<ftp.user>ftpUser</ftp.user>
+		<ftp.password>ftpPwd</ftp.password>
+		<ftp.remotedir>ftpDir</ftp.remotedir>
 		<!-- Default JDBC properties -->
 		<jdbc.driverClass>com.mysql.jdbc.Driver</jdbc.driverClass>
 		<!-- JPA properties -->

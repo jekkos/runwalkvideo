@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- For assistance related to logback-translator or configuration  -->
+<!-- files in general, please contact the logback user mailing list -->
+<!-- at http://www.qos.ch/mailman/listinfo/logback-user             -->
+<!--                                                                -->
+<!-- For professional support please see                            -->
+<!--    http://www.qos.ch/shop/products/professionalSupport         -->
+<!--                                                                -->
+<configuration debug="true">
+    <!-- Errors were reported during translation. -->
+    <!-- Could not find transformer for com.runwalk.video.util.TimestampFileAppender -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%p] [%c#%t] - %m%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <fileNamePattern>${user.dir}\logs\runwalk-video-${project.version}_{yyyy-MM-dd_HH'h'mm}.log</fileNamePattern>
+        <encoder>
+            <pattern>%d{ISO8601} [%p] [%C{1}#%t] - %m%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="com.mchange.v2" level="WARN"/>
+    <logger name="org.jdesktop.beansbinding" level="ERROR"/>
+    <root level="DEBUG">
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="file"/>
+    </root>
+</configuration>

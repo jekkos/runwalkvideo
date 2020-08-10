@@ -1,6 +1,5 @@
 package com.runwalk.video.ui;
 
-import org.apache.log4j.Logger;
 import org.jdesktop.application.ResourceMap;
 
 import ca.odell.glazedlists.gui.WritableTableFormat;
@@ -9,6 +8,7 @@ import com.runwalk.video.model.AnalysisModel;
 import com.runwalk.video.model.CalendarSlotModel;
 import com.runwalk.video.model.CalendarSlotModel.CalendarSlotStatus;
 import com.runwalk.video.model.CustomerModel;
+import org.slf4j.LoggerFactory;
 
 public class CalendarSlotModelTableFormat<T extends CalendarSlotModel<?>> extends AbstractTableFormat<T> implements WritableTableFormat<T> {
 
@@ -48,7 +48,7 @@ public class CalendarSlotModelTableFormat<T extends CalendarSlotModel<?>> extend
 				if (calendarSlotModel instanceof AnalysisModel) {
 					AnalysisModel analysisModel = (AnalysisModel) calendarSlotModel;
 					boolean result = calendarSlotModel.getCustomerModel().removeAnalysisModel(analysisModel);
-					Logger.getLogger(getClass()).info(analysisModel + " remove success=" + result + ", customer=" + customerModel);
+					LoggerFactory.getLogger(getClass()).info(analysisModel + " remove success=" + result + ", customer=" + customerModel);
 					customerModel.addAnalysisModel(analysisModel);
 				} 
 				calendarSlotModel.setCustomerModel(customerModel);

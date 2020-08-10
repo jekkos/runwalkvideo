@@ -2,14 +2,14 @@ package com.runwalk.video.media;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
-
 import com.runwalk.video.media.settings.VideoComponentFactorySettings;
 import com.runwalk.video.media.settings.VideoComponentSettings;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class VideoComponentFactory<T extends VideoComponentSettings> {
 	
-	protected final static Logger LOGGER = Logger.getLogger(VideoCapturerFactory.class);
+	protected final static Logger LOGGER = LoggerFactory.getLogger(VideoCapturerFactory.class);
 	
 	private final Class<T> videoComponentSettingsClass;
 	

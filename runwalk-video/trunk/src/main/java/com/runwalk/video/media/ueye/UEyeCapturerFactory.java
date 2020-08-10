@@ -4,12 +4,11 @@ import java.util.Collection;
 import java.util.Map;
 
 import com.sun.jna.Native;
-import com.sun.jna.WString;
-import org.apache.log4j.Logger;
 
 import com.google.common.collect.Maps;
 import com.runwalk.video.media.IVideoCapturer;
 import com.runwalk.video.media.VideoCapturerFactory;
+import org.slf4j.LoggerFactory;
 
 /**
  * This factory can be used as an entry point to communicate with a uEye camera using native code.
@@ -54,7 +53,7 @@ public class UEyeCapturerFactory extends VideoCapturerFactory<UEyeCapturerSettin
 		// get camera information by passing the pointer to the created struct
 		int result = UEyeCapturerLibrary.GetCameraNames(uEyeCameraList.getPointer());
 		String isSuccess = result == 0 ? "succeeded" : "failed (" + result + ")";
-		Logger.getLogger(getClass()).debug("GetCameraNames " + isSuccess);
+		LoggerFactory.getLogger(getClass()).debug("GetCameraNames " + isSuccess);
 		// read struct information back into java
 		uEyeCameraList.read();
 		// enumerate available camera's

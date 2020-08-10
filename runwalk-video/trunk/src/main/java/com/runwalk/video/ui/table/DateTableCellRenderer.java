@@ -13,6 +13,8 @@
 
 package com.runwalk.video.ui.table;
 
+import org.slf4j.LoggerFactory;
+
 import java.awt.Component;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -20,7 +22,6 @@ import java.util.Date;
 
 import javax.swing.table.DefaultTableCellRenderer;
 
-import org.apache.log4j.Logger;
 
 /** 
  * A table cell renderer for the Date class. 
@@ -84,7 +85,7 @@ public class DateTableCellRenderer extends DefaultTableCellRenderer {
 					// set the time value on the spinner, should be formatted using a dateformat..
 					result = getDateFormat().parse(value.toString());
 				} catch (ParseException e) {
-					Logger.getLogger(getClass()).debug("Failed to parse date " + value);
+					LoggerFactory.getLogger(getClass()).debug("Failed to parse date " + value);
 				}
 			} else {
 				result = (Date) value;

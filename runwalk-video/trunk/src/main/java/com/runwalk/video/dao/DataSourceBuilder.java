@@ -5,13 +5,12 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import org.apache.log4j.Logger;
-
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableMap.Builder;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.runwalk.video.settings.DatabaseSettings;
+import org.slf4j.LoggerFactory;
 
 public class DataSourceBuilder {
 
@@ -55,7 +54,7 @@ public class DataSourceBuilder {
 			dataSource.setPassword(databaseSettings.getPassword());
 			//dataSource.setIdleConnectionTestPeriod(databaseSettings.getIdleConnectionTestPeriod());
 		} catch(PropertyVetoException e) {
-			Logger.getLogger(DataSourceBuilder.class).error(e);
+			LoggerFactory.getLogger(DataSourceBuilder.class).error("Could not build datasource", e);
 		}
 		return dataSource;
 	}

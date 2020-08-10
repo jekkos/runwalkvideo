@@ -2,7 +2,7 @@ package com.runwalk.video.aspects;
 
 import java.util.concurrent.TimeUnit;
 import org.jdesktop.application.Task;
-import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public aspect BenchmarkInterceptor {
 
@@ -12,7 +12,7 @@ public aspect BenchmarkInterceptor {
     		long ms = task.getExecutionDuration(TimeUnit.MILLISECONDS);
     		long s = task.getExecutionDuration(TimeUnit.SECONDS);
     		String duration = ms > 10000 ? s + "s" : ms + "ms";
-    		Logger.getLogger(BenchmarkInterceptor.class).debug(task.getClass().getSimpleName() + " finished in " + duration);
+    		LoggerFactory.getLogger(BenchmarkInterceptor.class).debug(task.getClass().getSimpleName() + " finished in " + duration);
     	}
      }
 	

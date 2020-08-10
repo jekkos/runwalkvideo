@@ -1,8 +1,5 @@
 package com.runwalk.video.media.dsj;
 
-
-import org.apache.log4j.Level;
-
 import com.runwalk.video.media.settings.VideoCapturerSettings;
 
 import de.humatic.dsj.DSEnvironment;
@@ -28,7 +25,7 @@ public class DSJFileSinkCapturer extends DSJCapturer {
 	public void startRecording(String videoPath) {
 		if (sink == null || !controllable) {
 			try {
-				getLogger().log(Level.DEBUG, "Reading sink definitions from " + DSEnvironment.getSetupPath());
+				getLogger().debug("Reading sink definitions from " + DSEnvironment.getSetupPath());
 				sink = FileSink.fromXML("ATI_FileSink", DSEnvironment.getSetupPath());
 				sink.setFlags(FileSink.DISPLAY_LOCAL);
 				controllable = getFiltergraph().connectSink(sink) == FileSink.CONTROLABLE;

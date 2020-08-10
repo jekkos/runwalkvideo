@@ -29,7 +29,6 @@ import javax.swing.JToggleButton;
 
 import net.miginfocom.swing.MigLayout;
 
-import org.apache.log4j.Logger;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.SingleFrameApplication;
 
@@ -37,6 +36,7 @@ import com.google.common.collect.Iterables;
 import com.runwalk.video.core.AppComponent;
 import com.runwalk.video.core.SelfContained;
 import com.runwalk.video.ui.actions.ApplicationActionConstants;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("serial")
 @AppComponent
@@ -205,7 +205,7 @@ public class VideoCapturerDialog extends JDialog implements ApplicationActionCon
 			setLocationRelativeTo(null);
 		} catch(Throwable exception) {
 			// probably some native packages missing..
-			Logger.getLogger(getClass()).error("Error while initializing capturers", exception);
+			LoggerFactory.getLogger(getClass()).error("Error while initializing capturers", exception);
 			showErrorDialog();
 			result = false;
 		}

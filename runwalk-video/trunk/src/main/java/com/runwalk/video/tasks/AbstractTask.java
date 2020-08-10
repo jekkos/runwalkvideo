@@ -8,10 +8,11 @@ import java.util.Collections;
 
 import javax.swing.JOptionPane;
 
-import org.apache.log4j.Logger;
 import org.jdesktop.application.Application;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.Task;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public abstract class AbstractTask<T, V> extends Task<T, V> {
 	private static final String ERROR_MESSAGE = "errorMessage";
@@ -21,7 +22,7 @@ public abstract class AbstractTask<T, V> extends Task<T, V> {
 	@SuppressWarnings("deprecation")
 	public AbstractTask(String name) {
 		super(Application.getInstance(), name);
-		logger = Logger.getLogger(getClass());
+		logger = LoggerFactory.getLogger(getClass());
 	}
 
 	protected void errorMessage(String formatResourceKey, Object... args) { 

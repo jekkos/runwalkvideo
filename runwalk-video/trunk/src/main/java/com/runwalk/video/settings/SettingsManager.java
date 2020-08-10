@@ -1,46 +1,42 @@
 package com.runwalk.video.settings;
 
-import java.awt.Font;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.List;
-import java.util.logging.Level;
-
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAnyElement;
-import javax.xml.bind.annotation.XmlElementRef;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
-
-import org.apache.log4j.FileAppender;
-import org.apache.log4j.Logger;
-import org.apache.log4j.PropertyConfigurator;
-import org.jdesktop.application.utils.AppHelper;
-import org.jdesktop.application.utils.PlatformType;
-import org.jdesktop.beansbinding.ELProperty;
-import org.w3c.dom.DOMException;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.InputSource;
-
+import ch.qos.logback.classic.BasicConfigurator;
+import ch.qos.logback.core.FileAppender;
 import com.google.common.collect.Lists;
+import com.runwalk.video.RunwalkVideoApp;
 import com.runwalk.video.io.DateVideoFolderRetrievalStrategy;
 import com.runwalk.video.io.VideoFolderRetrievalStrategy;
 import com.runwalk.video.media.VideoCapturerFactory;
 import com.runwalk.video.media.settings.VideoComponentFactorySettings;
 import com.runwalk.video.util.AppUtil;
+import org.jdesktop.application.utils.AppHelper;
+import org.jdesktop.application.utils.PlatformType;
+import org.jdesktop.beansbinding.ELProperty;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.DOMException;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.*;
+import javax.xml.xpath.XPath;
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathExpressionException;
+import javax.xml.xpath.XPathFactory;
+import java.awt.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.logging.Level;
 
 public class SettingsManager {
 
@@ -79,13 +75,16 @@ public class SettingsManager {
 	 * 
 	 * This file will be loaded when {@link #loadSettings()} is executed.
 	 */
-	public static void configureLog4j() {
-		URL resource = Thread.currentThread().getContextClassLoader().getResource("META-INF/log4j.properties");
-		PropertyConfigurator.configure(resource);
-		logger = Logger.getLogger(SettingsManager.class);
-		FileAppender appndr = (FileAppender) Logger.getRootLogger().getAppender(FILE_APPENDER_NAME);
-		logger.debug("Logging to file with location " + appndr.getFile());
-		org.jdesktop.beansbinding.util.logging.Logger.getLogger(ELProperty.class.getName()).setLevel(Level.SEVERE);
+	public static void configureLogging() {
+		//${project.version}_%d{yyyy-MM-dd_HH'h'mm}
+		System.setProperty("log.suffix", new SimpleDateFormat("yyyy-MM-dd_HH'h'mm").format(new Date()));
+
+		logger = LoggerFactory.getLogger(SettingsManager.class);
+
+		ch.qos.logback.classic.Logger rootLogger = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
+		FileAppender appender = (FileAppender) rootLogger.getAppender(FILE_APPENDER_NAME);
+
+		SettingsManager.logger.debug("Logging to file with location " + appender.getFile());
 	}
 
 	public SettingsManager(File localStorageDir) {
@@ -131,7 +130,6 @@ public class SettingsManager {
 	}
 
 	public void loadSettings() {
-		loadAddtionalLog4JSettings();
 		logger.debug("Initializing ApplicationSettings..");
 		File settingsFile = null;
 		try { 
@@ -160,18 +158,6 @@ public class SettingsManager {
 		}
 		logger.debug("Found videodir: " + getVideoDir().getAbsolutePath());
 		logger.debug("Found uncompressed videodir: " + getUncompressedVideoDir().getAbsolutePath());
-	}
-	
-	/**
-	 * Looks for additional log4j files in the user.home directory of the application.
-	 * Use this to store specific appenders that require easy configuration. 
-	 */
-	private void loadAddtionalLog4JSettings() {
-		File resource = new File(getLocalStorageDir(), "log4j.properties");
-		if (resource.exists()) {
-			logger.debug("Loading additional log4J properties from " + resource.getAbsolutePath());
-			PropertyConfigurator.configure(resource.getAbsolutePath());
-		}
 	}
 
 	public void saveSettings() {
@@ -265,9 +251,11 @@ public class SettingsManager {
 	}
 
 	public File getLogFile() {
+
 		if (logFile == null || !logFile.exists()) {
-			FileAppender appndr = (FileAppender) Logger.getRootLogger().getAppender(FILE_APPENDER_NAME);
-			String fileName = appndr.getFile();
+			ch.qos.logback.classic.Logger rootLogger = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
+			FileAppender appender = (FileAppender) rootLogger.getAppender(FILE_APPENDER_NAME);
+			String fileName = appender.getFile();
 			logFile = new File(fileName);
 		}
 		return logFile;

@@ -10,12 +10,12 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.PersistenceException;
 import javax.persistence.TypedQuery;
 
-import org.apache.log4j.Logger;
 import org.eclipse.persistence.config.HintValues;
 import org.eclipse.persistence.config.QueryHints;
 
 import com.runwalk.video.dao.AbstractDao;
 import com.runwalk.video.dao.Dao;
+import org.slf4j.LoggerFactory;
 
 /**
  * This is a default {@link Dao} implementation for a J2SE application managed persistence context. 
@@ -161,10 +161,10 @@ public class JpaDao<E> extends AbstractDao<E> {
 		} catch(PersistenceException e) {
 			if (tx != null && tx.isActive()) {
 				tx.rollback();
-				Logger.getLogger(getClass()).warn("Transaction was rolled back!");
+				LoggerFactory.getLogger(getClass()).warn("Transaction was rolled back!");
 			}
 			if (retryNumber < MAX_ROLLBACKS) {
-				Logger.getLogger(getClass()).info("Retrying persist: " + e.getMessage());
+				LoggerFactory.getLogger(getClass()).info("Retrying persist: " + e.getMessage());
 				persist(item, ++retryNumber);
 			} else {
 				throw e;

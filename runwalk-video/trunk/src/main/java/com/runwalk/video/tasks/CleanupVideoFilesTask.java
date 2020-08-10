@@ -88,7 +88,7 @@ public class CleanupVideoFilesTask extends AbstractTask<Boolean, Void> {
 						dialogTitle, JOptionPane.WARNING_MESSAGE); 
 			}
 		} catch (Exception e) {
-			getLogger().error(e);
+			getLogger().error("Video file cleanup failed", e);
 		} 
 	}
 

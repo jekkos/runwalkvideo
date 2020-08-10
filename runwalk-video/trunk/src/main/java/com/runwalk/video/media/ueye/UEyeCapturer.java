@@ -27,7 +27,6 @@ import javax.swing.JFileChooser;
 import javax.swing.SwingUtilities;
 import javax.swing.filechooser.FileFilter;
 
-import org.apache.log4j.Logger;
 import org.jdesktop.application.Action;
 
 import com.runwalk.video.core.Containable;
@@ -40,6 +39,8 @@ import com.sun.jna.Native;
 import com.sun.jna.Pointer;
 import com.sun.jna.WString;
 import com.sun.jna.ptr.IntByReference;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class UEyeCapturer implements IVideoCapturer, PropertyChangeSupport, Containable, FullScreenSupport, ComponentListener  {
 
@@ -51,7 +52,7 @@ public class UEyeCapturer implements IVideoCapturer, PropertyChangeSupport, Cont
 
 	private static final String MJPEG_ENCODER = "MJPEG";
 	
-	private static Logger LOGGER =  Logger.getLogger(UEyeCapturer.class);
+	private static Logger LOGGER =  LoggerFactory.getLogger(UEyeCapturer.class);
 	
 	private final UEyeCapturerSettings uEyeCapturerSettings;
 
@@ -206,7 +207,7 @@ public class UEyeCapturer implements IVideoCapturer, PropertyChangeSupport, Cont
 					try {
 						Thread.sleep(1000);
 					} catch (InterruptedException e) {
-						LOGGER.error(e);
+						LOGGER.error("Failed to get frameDropInfo", e);
 					}
 				}
 				long recordedSeconds = (System.currentTimeMillis() - startTime) / 1000;

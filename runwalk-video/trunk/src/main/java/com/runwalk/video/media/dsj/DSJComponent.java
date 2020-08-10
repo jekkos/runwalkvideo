@@ -15,7 +15,6 @@ import java.awt.image.BufferedImage;
 import javax.swing.AbstractButton;
 import javax.swing.JOptionPane;
 
-import org.apache.log4j.Logger;
 import org.jdesktop.application.Action;
 
 import com.runwalk.video.core.Containable;
@@ -31,6 +30,8 @@ import de.humatic.dsj.DSFilter;
 import de.humatic.dsj.DSFilterInfo;
 import de.humatic.dsj.DSFiltergraph;
 import de.humatic.dsj.rc.RendererControls;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This class bundles all common DSJ functionality for the {@link IVideoCapturer} and {@link IVideoPlayer} implementations.
@@ -105,7 +106,7 @@ public abstract class DSJComponent<T extends DSFiltergraph, V extends VideoCompo
 	}
 
 	public Logger getLogger() {
-		return Logger.getLogger(getClass());
+		return LoggerFactory.getLogger(getClass());
 	}
 
 	@Action

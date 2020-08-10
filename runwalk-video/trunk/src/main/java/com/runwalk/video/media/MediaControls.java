@@ -251,7 +251,6 @@ public class MediaControls extends JPanel implements PropertyChangeListener, App
 					this.getLogger().debug("Stopping video for " + videoComponent.getTitle());
 					videoComponent.dispose();
 				}
-				new Robot().waitForIdle();
 				message("endMessage");
 				return null;
 			}
@@ -755,7 +754,7 @@ public class MediaControls extends JPanel implements PropertyChangeListener, App
 				int position = getFrontMostPlayer().getPosition();
 				if ((position == 0 || position >= getFrontMostPlayer().getDuration()) 
 						&& getFrontMostPlayer().isPlaying()) {
-					getLogger().debug("playback position set to 0");
+					getLogger().debug("Playback position set to 0");
 					invokeAction(STOP_ACTION, this);
 				}
 				setStatusInfo(position, getFrontMostPlayer().getDuration());

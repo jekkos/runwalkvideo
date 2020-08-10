@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.Set;
 
 import org.apache.commons.io.FilenameUtils;
-import org.apache.log4j.Logger;
 import org.jdesktop.application.utils.AppHelper;
 import org.jdesktop.application.utils.PlatformType;
 
@@ -21,6 +20,8 @@ import com.runwalk.video.settings.SettingsManager;
 
 import de.humatic.dsj.DSJException;
 import de.humatic.dsj.DSJUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * This manager caches the recordings together with their corresponding video files.
@@ -34,7 +35,7 @@ import de.humatic.dsj.DSJUtils;
  */
 public class VideoFileManager {
 
-	private static final Logger LOGGER = Logger.getLogger(VideoFileManager.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(VideoFileManager.class);
 
 	private Map<Recording, RecordingStatus> recordingStatusMap = new HashMap<Recording, RecordingStatus>();
 	/** A sorted view on the key set of the cached {@link #recordingStatusMap}. */
@@ -50,7 +51,7 @@ public class VideoFileManager {
 	 * Get a {@link Recording} from the cache that is associated with the video file on the 
 	 * given path. Will return <code>null</code> if nothing was found. 
 	 * 
-	 * @param path The path to get the Recording for
+	 * @param videoPath The path to get the Recording for
 	 * @return The found recording
 	 */
 	public Recording getRecording(String videoPath) {

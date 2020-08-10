@@ -70,7 +70,6 @@ public class VideoCapturer extends VideoComponent {
 					// continue waiting for component activation or disposal
 					if (getTaskService() != null && getTaskService().isShutdown()) {
 						dispose();
-						new Robot().waitForIdle();
 					}
 					Thread.yield();
 				}

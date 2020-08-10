@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.log4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AppUtil {
 	//duration formats
@@ -36,7 +36,7 @@ public class AppUtil {
 			try {
 				FileUtils.forceMkdir(directory);
 			} catch(IOException exception) {
-				Logger.getLogger(AppUtil.class).error("Directory " + directory.getAbsolutePath() + " couldn't be created.", exception);
+				LoggerFactory.getLogger(AppUtil.class).error("Directory " + directory.getAbsolutePath() + " couldn't be created.", exception);
 				return createDirectories(defaultDir, null);
 			}
 		} else if (directory == null && defaultDir != null) {

@@ -57,7 +57,7 @@ class DSJCapturer extends DSJComponent<DSCapture, VideoCapturerSettings> impleme
 					try {
 						Thread.sleep(1000);
 					} catch (InterruptedException e) {
-						getLogger().error(e);
+						getLogger().error("Could not read frameDropInfo", e);
 					}
 				}
 			}

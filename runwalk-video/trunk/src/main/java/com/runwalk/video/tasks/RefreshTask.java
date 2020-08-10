@@ -104,7 +104,7 @@ public class RefreshTask extends AbstractTask<Boolean, Void> {
 			new Robot().waitForIdle();
 			message("endMessage", getExecutionDuration(TimeUnit.SECONDS));
 		} catch(Exception exc) {
-			getLogger().error(Level.SEVERE, exc);
+			getLogger().error("RefreshTask failed", exc);
 			success = false;
 		}
 		return success;

@@ -22,8 +22,6 @@ import javax.swing.event.UndoableEditListener;
 
 import net.miginfocom.swing.MigLayout;
 
-import org.apache.log4j.Level;
-import org.apache.log4j.Logger;
 import org.jdesktop.application.Application;
 import org.jdesktop.application.ApplicationContext;
 import org.jdesktop.application.ResourceMap;
@@ -67,6 +65,8 @@ import com.runwalk.video.ui.actions.ApplicationActions;
 import com.runwalk.video.ui.actions.MediaActionConstants;
 import com.runwalk.video.util.AWTExceptionHandler;
 import com.tomtessier.scrollabledesktop.JScrollableDesktopPane;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The main class of the application.
@@ -79,7 +79,7 @@ public class RunwalkVideoApp extends SingleFrameApplication implements Applicati
 	public static final String APP_BUILD_DATE = "Application.build.date";
 	public static final String APP_MAIN_FONT = "Application.mainFont";
 
-	private final static Logger LOGGER = Logger.getLogger(RunwalkVideoApp.class);
+	private final static Logger LOGGER = LoggerFactory.getLogger(RunwalkVideoApp.class);
 
 	private static final String SAVE_NEEDED = "saveNeeded";
 
@@ -128,8 +128,8 @@ public class RunwalkVideoApp extends SingleFrameApplication implements Applicati
 	 * After logging has been set up, the application will launch using the swing application framework (SAF).
 	 */
 	public static void main(String[] args) {
-		SettingsManager.configureLog4j();
-		LOGGER.log(Level.INFO, "Detected platform is " + AppHelper.getPlatform());
+		SettingsManager.configureLogging();
+		LOGGER.info("Detected platform is " + AppHelper.getPlatform());
 		launch(RunwalkVideoApp.class, args);
 	}
 
@@ -164,7 +164,7 @@ public class RunwalkVideoApp extends SingleFrameApplication implements Applicati
 	/** {@inheritDoc} */ 
 	@Override
 	protected void initialize(String[] args) { 
-		LOGGER.log(Level.INFO, "Starting " + getTitle());
+		LOGGER.info("Starting {}", getTitle());
 		// register an exception handler on the EDT
 		AWTExceptionHandler.registerExceptionHandler();
 		ApplicationContext appContext = Application.getInstance().getContext();
@@ -288,9 +288,9 @@ public class RunwalkVideoApp extends SingleFrameApplication implements Applicati
 						LOGGER.debug("Waiting for tasks on EDT to end...");
 						new Robot().waitForIdle();
 					} catch (AWTException e) {
-						LOGGER.error(e);
+						LOGGER.error("Awt exception occurred", e);
 					} catch (InterruptedException e) {
-						LOGGER.error(e);
+						LOGGER.error("Task interrupted", e);
 					}
 				}
 				LOGGER.debug("DaoService shutting down...");
@@ -320,7 +320,7 @@ public class RunwalkVideoApp extends SingleFrameApplication implements Applicati
 	/**
 	 * Add the given {@link AbstractTablePanel} to the list of panels so it's dirty state can be tracked.
 	 * Setting a panel's dirty state to <code>true</code> will enable the save action throughout the application.
-	 * @param tablePanel The panel to add to the list
+	 * @param panel The panel to add to the list
 	 */
 	private void addTablePanel(AbstractPanel panel) {
 		panel.addPropertyChangeListener(dirtyListener);
@@ -518,7 +518,7 @@ public class RunwalkVideoApp extends SingleFrameApplication implements Applicati
 	public static class EclipseLinkLogger extends org.eclipse.persistence.logging.AbstractSessionLog {
 
 		public void log(org.eclipse.persistence.logging.SessionLogEntry arg0) {
-			LOGGER.log(Level.toLevel(arg0.getLevel()), arg0.getMessage());
+			LOGGER.debug(arg0.getMessage());
 		}
 
 	}

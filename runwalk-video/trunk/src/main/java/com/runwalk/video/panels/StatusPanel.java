@@ -15,11 +15,11 @@ import javax.swing.Timer;
 
 import net.miginfocom.swing.MigLayout;
 
-import org.apache.log4j.Level;
 import org.jdesktop.application.TaskMonitor;
 
 import com.runwalk.video.core.AppComponent;
 import com.runwalk.video.settings.SettingsManager;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("serial")
 @AppComponent
@@ -112,12 +112,12 @@ public class StatusPanel extends JPanel {
 	}
 	
 	public void showMessage(String msg) {
-		getLogger().log(Level.INFO, msg);
+		LoggerFactory.getLogger(getClass()).info(msg);
 		showMessage(Color.black, msg);
 	}
 	
 	public void showErrorMessage(String error) {
-		getLogger().log(Level.ERROR, error);
+		LoggerFactory.getLogger(getClass()).error(error);
 		showMessage(Color.red, error);
 	}
 	

@@ -34,7 +34,7 @@ public class UploadLogFilesTask extends AbstractTask<Void, Void> {
         while ((line = reader.readLine()) != null) {
         	output.append(line);
         }
-        getLogger().debug(output);
+        getLogger().debug(output.toString());
         reader.close();
         message("endMessage");
         return null;

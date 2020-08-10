@@ -6,7 +6,6 @@ import java.util.List;
 
 import javax.swing.ActionMap;
 
-import org.apache.log4j.Logger;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ApplicationActionMap;
 import org.jdesktop.application.ApplicationContext;
@@ -17,6 +16,8 @@ import org.jdesktop.application.TaskService;
 import com.runwalk.video.RunwalkVideoApp;
 import com.runwalk.video.core.AppComponent;
 import com.runwalk.video.core.IAppComponent;
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  * This aspect will add common BSAF functionalities to classes implementing the {@link AppComponent} marker interface.
@@ -48,7 +49,7 @@ public aspect AppComponentAspect {
 	}
 
 	public Logger IAppComponent.getLogger() {
-		return Logger.getLogger(getClass());
+		return LoggerFactory.getLogger(getClass());
 	}
 
 	public ResourceMap IAppComponent.getResourceMap(Class<?> theClass) {

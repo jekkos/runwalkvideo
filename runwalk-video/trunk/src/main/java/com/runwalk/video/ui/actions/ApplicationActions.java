@@ -7,10 +7,10 @@ import javax.swing.event.UndoableEditListener;
 import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoManager;
 
-import org.apache.log4j.Logger;
 import org.jdesktop.application.Action;
 
 import com.runwalk.video.core.PropertyChangeSupport;
+import org.slf4j.LoggerFactory;
 
 public class ApplicationActions implements PropertyChangeSupport {
 	private static final String REDO_ENABLED = "redoEnabled";
@@ -42,7 +42,7 @@ public class ApplicationActions implements PropertyChangeSupport {
 			undo.undo();
 		}
 		catch( CannotUndoException ex) {
-			Logger.getLogger(ApplicationActions.class).error(ex);
+			LoggerFactory.getLogger(ApplicationActions.class).error("Cannot undo", ex);
 			Toolkit.getDefaultToolkit().beep();
 		}
 		updateUndoActions();
@@ -54,7 +54,7 @@ public class ApplicationActions implements PropertyChangeSupport {
 			undo.redo();
 		}
 		catch( CannotUndoException ex) {
-			Logger.getLogger(ApplicationActions.class).error(ex);
+			LoggerFactory.getLogger(ApplicationActions.class).error("Cannot redo", ex);
 			Toolkit.getDefaultToolkit().beep();
 		}
 		updateUndoActions();

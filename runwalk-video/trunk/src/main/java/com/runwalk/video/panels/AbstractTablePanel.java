@@ -14,8 +14,6 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
 
-import org.apache.log4j.Level;
-
 import ca.odell.glazedlists.EventList;
 import ca.odell.glazedlists.ListSelection;
 import ca.odell.glazedlists.ObservableElementList;
@@ -32,6 +30,7 @@ import com.runwalk.video.entities.SerializableEntity;
 import com.runwalk.video.model.AbstractEntityModel;
 import com.runwalk.video.settings.SettingsManager;
 import com.runwalk.video.ui.AbstractEntityModelConnector;
+import org.slf4j.LoggerFactory;
 
 @SuppressWarnings("serial")
 public abstract class AbstractTablePanel<T extends AbstractEntityModel<? extends SerializableEntity<?>>> extends AbstractPanel {
@@ -75,7 +74,7 @@ public abstract class AbstractTablePanel<T extends AbstractEntityModel<? extends
 						newValue = Iterables.getOnlyElement(sourceList);
 					}
 					setSelectedItem(newValue);
-					getLogger().log(Level.DEBUG, "Selected " + selectedItem.toString());
+					LoggerFactory.getLogger(getClass()).debug("Selected {}", selectedItem.toString());
 					setRowSelected(!eventSelectionModel.getSelected().isEmpty());
 				}
 			}

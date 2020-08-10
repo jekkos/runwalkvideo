@@ -80,7 +80,7 @@ public abstract class VideoCapturerFactory<T extends VideoCapturerSettings> exte
 						videoCapturer.invokeAction(VideoComponent.DISPOSE_ON_EXIT_ACTION, videoCapturerImpl);
 					} catch(RuntimeException e) {
 						//TODO show appropriate error dialog here, in this case the creation will prolly return null
-						LOGGER.error(e);
+						LOGGER.error("Error occured while starting capturer", e);
 					}
 				} else if (evt.getPropertyName().equals(SelfContained.MONITOR_ID)) {
 					if (videoCapturer.getVideoImpl() instanceof SelfContained) {

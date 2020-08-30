@@ -1,0 +1,871 @@
+2020-08-30 16:54:49,959 [DEBUG] [c.r.v.s.SettingsManager#javawsApplicationMain] - Logging to file with location C:\Users\Jeroen\workspace\runwalkvideo\logs\runwalk-video-0.7.log
+2020-08-30 16:54:49,964 [INFO] [c.r.v.RunwalkVideoApp#javawsApplicationMain] - Detected platform is Windows
+2020-08-30 16:54:50,021 [INFO] [c.r.v.RunwalkVideoApp#AWT-EventQueue-2] - Starting runwalk-video 0.7 (29082020-230653)
+2020-08-30 16:54:50,033 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Scanning JAXB annotated classes ..
+2020-08-30 16:54:50,086 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Instantiating JAXB context..
+2020-08-30 16:54:50,218 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Initializing ApplicationSettings..
+2020-08-30 16:54:50,218 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Loading application settings from file C:\Users\Jeroen\AppData\Roaming\Runwalk\Runwalk Herentals\settings.xml
+2020-08-30 16:54:50,234 [ERROR] [c.r.v.u.AppUtil#AWT-EventQueue-2] - Directory Z:\runwalk-video\mount\runwalk-video\video couldn't be created.
+java.io.IOException: Unable to create directory Z:\runwalk-video\mount\runwalk-video\video
+	at org.apache.commons.io.FileUtils.forceMkdir(FileUtils.java:2384)
+	at com.runwalk.video.util.AppUtil.createDirectories(AppUtil.java:37)
+	at com.runwalk.video.settings.SettingsManager.getDirectory(SettingsManager.java:249)
+	at com.runwalk.video.settings.SettingsManager.getVideoDir(SettingsManager.java:212)
+	at com.runwalk.video.settings.SettingsManager.loadSettings(SettingsManager.java:160)
+	at com.runwalk.video.RunwalkVideoApp.initialize(RunwalkVideoApp.java:173)
+	at org.jdesktop.application.Application$1.run(Application.java:186)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue.access$600(EventQueue.java:97)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2020-08-30 16:54:50,235 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Found videodir: C:\Users\Jeroen\workspace\runwalkvideo
+2020-08-30 16:54:50,235 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Found uncompressed videodir: C:\Users\Jeroen\workspace\runwalkvideo\uncompressed
+2020-08-30 16:54:50,502 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - deprecated_property
+2020-08-30 16:54:50,602 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,614 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:54:50,619 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:54:50,620 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:54:50,620 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,621 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,623 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,623 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:54:50,624 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,624 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,625 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,625 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:54:50,625 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,625 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_one_reference_class
+2020-08-30 16:54:50,626 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:54:50,626 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:54:50,626 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,626 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,627 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:54:50,627 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,627 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:54:50,628 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:54:50,628 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,628 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,628 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:54:50,628 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_one_reference_class
+2020-08-30 16:54:50,629 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:54:50,629 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,629 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,630 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,630 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,630 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,630 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:54:50,633 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:54:50,641 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:54:50,641 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:54:50,642 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 16:54:50,644 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_pk_column
+2020-08-30 16:54:50,645 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_fk_column
+2020-08-30 16:54:50,645 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_discriminator_column
+2020-08-30 16:54:50,645 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:54:50,645 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:54:50,647 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:54:50,647 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 16:54:50,647 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:54:50,648 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 16:54:50,648 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:54:50,648 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:54:50,649 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:54:50,649 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 16:54:50,649 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:54:50,649 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:54:50,655 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:54:50,655 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:54:50,663 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:54:50,664 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:54:50,664 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:54:50,664 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:54:50,664 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:54:50,664 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:54:50,665 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:54:50,665 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:54:50,665 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:54:51,706 [ERROR] [c.r.v.m.VideoCapturerDialog#AWT-EventQueue-2] - Error while initializing capturers
+java.lang.UnsatisfiedLinkError: Unable to load library 'ueye-nativelib': Kan opgegeven module niet vinden.
+
+	at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:169)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:242)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:205)
+	at com.runwalk.video.media.ueye.UEyeCapturerLibrary.<clinit>(UEyeCapturerLibrary.java:16)
+	at com.runwalk.video.media.ueye.UEyeCapturerFactory.getVideoCapturerNames(UEyeCapturerFactory.java:54)
+	at com.runwalk.video.media.CompositeVideoCapturerFactory.getVideoCapturerNames(CompositeVideoCapturerFactory.java:114)
+	at com.runwalk.video.media.VideoCapturerDialog.refreshVideoCapturers(VideoCapturerDialog.java:194)
+	at com.runwalk.video.media.VideoCapturerFactory.createVideoCapturer(VideoCapturerFactory.java:143)
+	at com.runwalk.video.media.CompositeVideoCapturerFactory.createVideoCapturer(CompositeVideoCapturerFactory.java:99)
+	at com.runwalk.video.media.MediaControls.startVideoCapturer(MediaControls.java:561)
+	at com.runwalk.video.RunwalkVideoApp.startup(RunwalkVideoApp.java:214)
+	at org.jdesktop.application.Application$1.run(Application.java:187)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue.access$600(EventQueue.java:97)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2020-08-30 16:55:16,766 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - deprecated_property
+2020-08-30 16:55:16,780 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - topLink_version
+2020-08-30 16:55:16,786 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connecting
+2020-08-30 16:55:16,801 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Gegevens inladen..
+2020-08-30 16:55:17,201 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connected_user_database_driver
+2020-08-30 16:55:17,201 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connecting
+2020-08-30 16:55:17,214 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connected_user_database_driver
+2020-08-30 16:55:17,247 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - login_successful
+2020-08-30 16:55:17,391 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - SELECT zip, city, state, country FROM ospos_people
+2020-08-30 16:55:17,724 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - SELECT t0.person_id, t0.type, t0.email, t0.first_name, t0.gender, t0.last_name, t0.phone_number, t0.VERSION, t0.address_1, t0.zip, t0.city, t0.state, t0.country, t1.person_id, t1.account_number, t1.company_name, t1.consent, MAX(t2.start_date) FROM ospos_people t0 LEFT OUTER JOIN ospos_analysis t2 ON (t2.person_id = t0.person_id), ospos_customers t1 WHERE ((t2.feedback_id IS NULL) AND ((t1.person_id = t0.person_id) AND (t0.type = ?))) GROUP BY t0.person_id
+	bind => [0]
+2020-08-30 16:55:19,568 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Gebruikersinterface up-to-date brengen..
+2020-08-30 16:55:19,630 [DEBUG] [c.r.v.a.BenchmarkInterceptor#pool-2-thread-1] - RefreshTask finished in 2830ms
+2020-08-30 16:55:19,663 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Inladen voltooid in 2 s.
+2020-08-30 16:55:34,416 [DEBUG] [c.r.v.RunwalkVideoApp#AWT-EventQueue-2] - Shutdown initiated...
+2020-08-30 16:55:34,423 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Saving application settings to file C:\Users\Jeroen\AppData\Roaming\Runwalk\Runwalk Herentals\settings.xml
+2020-08-30 16:55:34,449 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Taskservice shutting down...
+2020-08-30 16:55:34,450 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Waiting for tasks on EDT to end...
+2020-08-30 16:55:34,481 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Waiting for tasks on EDT to end...
+2020-08-30 16:55:34,482 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Video input stoppen..
+2020-08-30 16:55:34,482 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Video input gestopt.
+2020-08-30 16:55:34,508 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - DaoService shutting down...
+2020-08-30 16:55:34,509 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AwaitShutdownThread] - disconnect
+2020-08-30 16:55:34,509 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AwaitShutdownThread] - logout_successful
+2020-08-30 16:55:34,510 [DEBUG] [c.r.v.RunwalkVideoApp#AwaitShutdownThread] - Taskservice terminated. byebye...
+2020-08-30 16:55:45,934 [DEBUG] [c.r.v.s.SettingsManager#javawsApplicationMain] - Logging to file with location C:\Users\Jeroen\workspace\runwalkvideo\logs\runwalk-video-0.7.log
+2020-08-30 16:55:45,938 [INFO] [c.r.v.RunwalkVideoApp#javawsApplicationMain] - Detected platform is Windows
+2020-08-30 16:55:45,990 [INFO] [c.r.v.RunwalkVideoApp#AWT-EventQueue-2] - Starting runwalk-video 0.7 (29082020-230653)
+2020-08-30 16:55:46,001 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Scanning JAXB annotated classes ..
+2020-08-30 16:55:46,036 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Instantiating JAXB context..
+2020-08-30 16:55:46,180 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Initializing ApplicationSettings..
+2020-08-30 16:55:46,181 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Loading application settings from file C:\Users\Jeroen\AppData\Roaming\Runwalk\Runwalk Herentals\settings.xml
+2020-08-30 16:55:46,199 [ERROR] [c.r.v.u.AppUtil#AWT-EventQueue-2] - Directory Z:\runwalk-video\mount\runwalk-video\video couldn't be created.
+java.io.IOException: Unable to create directory Z:\runwalk-video\mount\runwalk-video\video
+	at org.apache.commons.io.FileUtils.forceMkdir(FileUtils.java:2384)
+	at com.runwalk.video.util.AppUtil.createDirectories(AppUtil.java:37)
+	at com.runwalk.video.settings.SettingsManager.getDirectory(SettingsManager.java:249)
+	at com.runwalk.video.settings.SettingsManager.getVideoDir(SettingsManager.java:212)
+	at com.runwalk.video.settings.SettingsManager.loadSettings(SettingsManager.java:160)
+	at com.runwalk.video.RunwalkVideoApp.initialize(RunwalkVideoApp.java:173)
+	at org.jdesktop.application.Application$1.run(Application.java:186)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue.access$600(EventQueue.java:97)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2020-08-30 16:55:46,200 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Found videodir: C:\Users\Jeroen\workspace\runwalkvideo
+2020-08-30 16:55:46,200 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Found uncompressed videodir: C:\Users\Jeroen\workspace\runwalkvideo\uncompressed
+2020-08-30 16:55:46,486 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - deprecated_property
+2020-08-30 16:55:46,600 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,612 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:55:46,616 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:55:46,617 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:55:46,617 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,617 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,620 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,620 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:55:46,620 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,620 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,620 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,620 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:55:46,620 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,621 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_one_reference_class
+2020-08-30 16:55:46,621 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:55:46,621 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:55:46,621 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,622 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,622 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:55:46,622 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,622 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:55:46,622 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:55:46,623 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,623 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,623 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:55:46,623 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_one_reference_class
+2020-08-30 16:55:46,623 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:55:46,624 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,624 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,624 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,625 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,625 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,625 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:55:46,628 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:55:46,636 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:55:46,636 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:55:46,637 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 16:55:46,639 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_pk_column
+2020-08-30 16:55:46,639 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_fk_column
+2020-08-30 16:55:46,639 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_discriminator_column
+2020-08-30 16:55:46,640 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:55:46,640 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:55:46,642 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:55:46,642 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 16:55:46,642 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:55:46,642 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 16:55:46,643 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:55:46,643 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:55:46,643 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:55:46,644 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 16:55:46,644 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:55:46,644 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:55:46,651 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:55:46,651 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:55:46,660 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:55:46,660 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:55:46,660 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:55:46,660 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:55:46,660 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:55:46,661 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:55:46,661 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:55:46,661 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:55:46,661 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:55:47,664 [ERROR] [c.r.v.m.VideoCapturerDialog#AWT-EventQueue-2] - Error while initializing capturers
+java.lang.UnsatisfiedLinkError: Unable to load library 'ueye-nativelib': Kan opgegeven module niet vinden.
+
+	at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:169)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:242)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:205)
+	at com.runwalk.video.media.ueye.UEyeCapturerLibrary.<clinit>(UEyeCapturerLibrary.java:16)
+	at com.runwalk.video.media.ueye.UEyeCapturerFactory.getVideoCapturerNames(UEyeCapturerFactory.java:54)
+	at com.runwalk.video.media.CompositeVideoCapturerFactory.getVideoCapturerNames(CompositeVideoCapturerFactory.java:114)
+	at com.runwalk.video.media.VideoCapturerDialog.refreshVideoCapturers(VideoCapturerDialog.java:194)
+	at com.runwalk.video.media.VideoCapturerFactory.createVideoCapturer(VideoCapturerFactory.java:143)
+	at com.runwalk.video.media.CompositeVideoCapturerFactory.createVideoCapturer(CompositeVideoCapturerFactory.java:99)
+	at com.runwalk.video.media.MediaControls.startVideoCapturer(MediaControls.java:561)
+	at com.runwalk.video.RunwalkVideoApp.startup(RunwalkVideoApp.java:214)
+	at org.jdesktop.application.Application$1.run(Application.java:187)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue.access$600(EventQueue.java:97)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2020-08-30 16:58:10,056 [DEBUG] [c.r.v.s.SettingsManager#javawsApplicationMain] - Logging to file with location C:\Users\Jeroen\workspace\runwalkvideo\logs\runwalk-video-0.7.log
+2020-08-30 16:58:10,060 [INFO] [c.r.v.RunwalkVideoApp#javawsApplicationMain] - Detected platform is Windows
+2020-08-30 16:58:10,107 [INFO] [c.r.v.RunwalkVideoApp#AWT-EventQueue-2] - Starting runwalk-video 0.7 (29082020-230653)
+2020-08-30 16:58:10,116 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Scanning JAXB annotated classes ..
+2020-08-30 16:58:10,159 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Instantiating JAXB context..
+2020-08-30 16:58:10,286 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Initializing ApplicationSettings..
+2020-08-30 16:58:10,287 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Loading application settings from file C:\Users\Jeroen\AppData\Roaming\Runwalk\Runwalk Herentals\settings.xml
+2020-08-30 16:58:10,303 [ERROR] [c.r.v.u.AppUtil#AWT-EventQueue-2] - Directory Z:\runwalk-video\mount\runwalk-video\video couldn't be created.
+java.io.IOException: Unable to create directory Z:\runwalk-video\mount\runwalk-video\video
+	at org.apache.commons.io.FileUtils.forceMkdir(FileUtils.java:2384)
+	at com.runwalk.video.util.AppUtil.createDirectories(AppUtil.java:37)
+	at com.runwalk.video.settings.SettingsManager.getDirectory(SettingsManager.java:249)
+	at com.runwalk.video.settings.SettingsManager.getVideoDir(SettingsManager.java:212)
+	at com.runwalk.video.settings.SettingsManager.loadSettings(SettingsManager.java:160)
+	at com.runwalk.video.RunwalkVideoApp.initialize(RunwalkVideoApp.java:173)
+	at org.jdesktop.application.Application$1.run(Application.java:186)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue.access$600(EventQueue.java:97)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2020-08-30 16:58:10,303 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Found videodir: C:\Users\Jeroen\workspace\runwalkvideo
+2020-08-30 16:58:10,303 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Found uncompressed videodir: C:\Users\Jeroen\workspace\runwalkvideo\uncompressed
+2020-08-30 16:58:10,565 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - deprecated_property
+2020-08-30 16:58:10,675 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,698 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:58:10,703 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:58:10,704 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:58:10,705 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,705 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,707 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,707 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:58:10,707 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,708 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,708 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,709 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:58:10,709 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,709 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_one_reference_class
+2020-08-30 16:58:10,709 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:58:10,710 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:58:10,710 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,710 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,710 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:58:10,710 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,711 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 16:58:10,711 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:58:10,711 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,711 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,711 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:58:10,711 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_one_reference_class
+2020-08-30 16:58:10,712 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 16:58:10,712 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,712 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,713 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,713 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,713 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,713 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 16:58:10,716 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:58:10,723 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:58:10,724 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:58:10,724 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 16:58:10,726 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_pk_column
+2020-08-30 16:58:10,727 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_fk_column
+2020-08-30 16:58:10,727 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_discriminator_column
+2020-08-30 16:58:10,727 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:58:10,727 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:58:10,729 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:58:10,729 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 16:58:10,730 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:58:10,730 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 16:58:10,730 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:58:10,730 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:58:10,731 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:58:10,731 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 16:58:10,731 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:58:10,732 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 16:58:10,737 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:58:10,738 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:58:10,746 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:58:10,746 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:58:10,746 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:58:10,746 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:58:10,747 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:58:10,747 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:58:10,747 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:58:10,747 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:58:10,748 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 16:58:11,760 [ERROR] [c.r.v.m.VideoCapturerDialog#AWT-EventQueue-2] - Error while initializing capturers
+java.lang.UnsatisfiedLinkError: Unable to load library 'ueye-nativelib': Kan opgegeven module niet vinden.
+
+	at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:169)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:242)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:205)
+	at com.runwalk.video.media.ueye.UEyeCapturerLibrary.<clinit>(UEyeCapturerLibrary.java:16)
+	at com.runwalk.video.media.ueye.UEyeCapturerFactory.getVideoCapturerNames(UEyeCapturerFactory.java:54)
+	at com.runwalk.video.media.CompositeVideoCapturerFactory.getVideoCapturerNames(CompositeVideoCapturerFactory.java:114)
+	at com.runwalk.video.media.VideoCapturerDialog.refreshVideoCapturers(VideoCapturerDialog.java:194)
+	at com.runwalk.video.media.VideoCapturerFactory.createVideoCapturer(VideoCapturerFactory.java:143)
+	at com.runwalk.video.media.CompositeVideoCapturerFactory.createVideoCapturer(CompositeVideoCapturerFactory.java:99)
+	at com.runwalk.video.media.MediaControls.startVideoCapturer(MediaControls.java:561)
+	at com.runwalk.video.RunwalkVideoApp.startup(RunwalkVideoApp.java:214)
+	at org.jdesktop.application.Application$1.run(Application.java:187)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue.access$600(EventQueue.java:97)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2020-08-30 17:00:42,144 [DEBUG] [c.r.v.s.SettingsManager#javawsApplicationMain] - Logging to file with location C:\Users\Jeroen\workspace\runwalkvideo\logs\runwalk-video-0.7.log
+2020-08-30 17:00:42,148 [INFO] [c.r.v.RunwalkVideoApp#javawsApplicationMain] - Detected platform is Windows
+2020-08-30 17:00:42,212 [INFO] [c.r.v.RunwalkVideoApp#AWT-EventQueue-2] - Starting runwalk-video 0.7 (29082020-230653)
+2020-08-30 17:00:42,222 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Scanning JAXB annotated classes ..
+2020-08-30 17:00:42,269 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Instantiating JAXB context..
+2020-08-30 17:00:42,411 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Initializing ApplicationSettings..
+2020-08-30 17:00:42,411 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Loading application settings from file C:\Users\Jeroen\AppData\Roaming\Runwalk\Runwalk Herentals\settings.xml
+2020-08-30 17:00:42,428 [ERROR] [c.r.v.u.AppUtil#AWT-EventQueue-2] - Directory Z:\runwalk-video\mount\runwalk-video\video couldn't be created.
+java.io.IOException: Unable to create directory Z:\runwalk-video\mount\runwalk-video\video
+	at org.apache.commons.io.FileUtils.forceMkdir(FileUtils.java:2384)
+	at com.runwalk.video.util.AppUtil.createDirectories(AppUtil.java:37)
+	at com.runwalk.video.settings.SettingsManager.getDirectory(SettingsManager.java:249)
+	at com.runwalk.video.settings.SettingsManager.getVideoDir(SettingsManager.java:212)
+	at com.runwalk.video.settings.SettingsManager.loadSettings(SettingsManager.java:160)
+	at com.runwalk.video.RunwalkVideoApp.initialize(RunwalkVideoApp.java:173)
+	at org.jdesktop.application.Application$1.run(Application.java:186)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue.access$600(EventQueue.java:97)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2020-08-30 17:00:42,428 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Found videodir: C:\Users\Jeroen\workspace\runwalkvideo
+2020-08-30 17:00:42,430 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Found uncompressed videodir: C:\Users\Jeroen\workspace\runwalkvideo\uncompressed
+2020-08-30 17:00:42,709 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - deprecated_property
+2020-08-30 17:00:42,820 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,833 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 17:00:42,836 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 17:00:42,838 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 17:00:42,838 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,839 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,841 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,841 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 17:00:42,841 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,841 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,842 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,842 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 17:00:42,842 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,843 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_one_reference_class
+2020-08-30 17:00:42,843 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 17:00:42,843 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 17:00:42,843 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,844 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,844 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 17:00:42,844 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,845 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 17:00:42,845 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 17:00:42,845 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,846 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,846 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 17:00:42,846 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_one_reference_class
+2020-08-30 17:00:42,847 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 17:00:42,847 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,848 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,848 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,848 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,848 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,849 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:00:42,852 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:00:42,860 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:00:42,860 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:00:42,861 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 17:00:42,864 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_pk_column
+2020-08-30 17:00:42,864 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_fk_column
+2020-08-30 17:00:42,864 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_discriminator_column
+2020-08-30 17:00:42,864 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:00:42,865 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:00:42,867 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:00:42,867 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 17:00:42,867 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:00:42,868 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 17:00:42,868 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:00:42,869 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:00:42,869 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:00:42,869 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 17:00:42,870 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:00:42,870 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:00:42,876 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:00:42,877 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:00:42,885 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:00:42,885 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:00:42,885 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:00:42,886 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:00:42,886 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:00:42,886 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:00:42,886 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:00:42,886 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:00:42,887 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:00:43,915 [ERROR] [c.r.v.m.VideoCapturerDialog#AWT-EventQueue-2] - Error while initializing capturers
+java.lang.UnsatisfiedLinkError: Unable to load library 'ueye-nativelib': Kan opgegeven module niet vinden.
+
+	at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:169)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:242)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:205)
+	at com.runwalk.video.media.ueye.UEyeCapturerLibrary.<clinit>(UEyeCapturerLibrary.java:16)
+	at com.runwalk.video.media.ueye.UEyeCapturerFactory.getVideoCapturerNames(UEyeCapturerFactory.java:54)
+	at com.runwalk.video.media.CompositeVideoCapturerFactory.getVideoCapturerNames(CompositeVideoCapturerFactory.java:114)
+	at com.runwalk.video.media.VideoCapturerDialog.refreshVideoCapturers(VideoCapturerDialog.java:194)
+	at com.runwalk.video.media.VideoCapturerFactory.createVideoCapturer(VideoCapturerFactory.java:143)
+	at com.runwalk.video.media.CompositeVideoCapturerFactory.createVideoCapturer(CompositeVideoCapturerFactory.java:99)
+	at com.runwalk.video.media.MediaControls.startVideoCapturer(MediaControls.java:561)
+	at com.runwalk.video.RunwalkVideoApp.startup(RunwalkVideoApp.java:214)
+	at org.jdesktop.application.Application$1.run(Application.java:187)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue.access$600(EventQueue.java:97)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2020-08-30 17:01:40,286 [DEBUG] [c.r.v.s.SettingsManager#javawsApplicationMain] - Logging to file with location C:\Users\Jeroen\workspace\runwalkvideo\logs\runwalk-video-0.7.log
+2020-08-30 17:01:40,290 [INFO] [c.r.v.RunwalkVideoApp#javawsApplicationMain] - Detected platform is Windows
+2020-08-30 17:01:40,343 [INFO] [c.r.v.RunwalkVideoApp#AWT-EventQueue-2] - Starting runwalk-video 0.7 (29082020-230653)
+2020-08-30 17:01:40,353 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Scanning JAXB annotated classes ..
+2020-08-30 17:01:40,395 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Instantiating JAXB context..
+2020-08-30 17:01:40,534 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Initializing ApplicationSettings..
+2020-08-30 17:01:40,534 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Loading application settings from file C:\Users\Jeroen\AppData\Roaming\Runwalk\Runwalk Herentals\settings.xml
+2020-08-30 17:01:40,552 [ERROR] [c.r.v.u.AppUtil#AWT-EventQueue-2] - Directory Z:\runwalk-video\mount\runwalk-video\video couldn't be created.
+java.io.IOException: Unable to create directory Z:\runwalk-video\mount\runwalk-video\video
+	at org.apache.commons.io.FileUtils.forceMkdir(FileUtils.java:2384)
+	at com.runwalk.video.util.AppUtil.createDirectories(AppUtil.java:37)
+	at com.runwalk.video.settings.SettingsManager.getDirectory(SettingsManager.java:249)
+	at com.runwalk.video.settings.SettingsManager.getVideoDir(SettingsManager.java:212)
+	at com.runwalk.video.settings.SettingsManager.loadSettings(SettingsManager.java:160)
+	at com.runwalk.video.RunwalkVideoApp.initialize(RunwalkVideoApp.java:173)
+	at org.jdesktop.application.Application$1.run(Application.java:186)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue.access$600(EventQueue.java:97)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2020-08-30 17:01:40,553 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Found videodir: C:\Users\Jeroen\workspace\runwalkvideo
+2020-08-30 17:01:40,553 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Found uncompressed videodir: C:\Users\Jeroen\workspace\runwalkvideo\uncompressed
+2020-08-30 17:01:40,826 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - deprecated_property
+2020-08-30 17:01:40,938 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,950 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 17:01:40,954 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 17:01:40,956 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 17:01:40,956 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,957 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,958 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,959 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 17:01:40,959 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,959 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,960 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,960 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 17:01:40,960 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,960 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_one_reference_class
+2020-08-30 17:01:40,961 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 17:01:40,961 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 17:01:40,961 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,961 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,962 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 17:01:40,962 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,962 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 17:01:40,962 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 17:01:40,963 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,963 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,963 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 17:01:40,963 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_one_reference_class
+2020-08-30 17:01:40,964 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 17:01:40,964 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,964 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,965 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,965 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,965 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,965 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 17:01:40,968 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:01:40,977 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:01:40,977 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:01:40,978 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 17:01:40,981 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_pk_column
+2020-08-30 17:01:40,982 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_fk_column
+2020-08-30 17:01:40,982 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_discriminator_column
+2020-08-30 17:01:40,982 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:01:40,983 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:01:40,985 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:01:40,985 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 17:01:40,985 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:01:40,985 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 17:01:40,986 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:01:40,986 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:01:40,987 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:01:40,987 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 17:01:40,987 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:01:40,987 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 17:01:40,994 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:01:40,994 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:01:41,003 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:01:41,003 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:01:41,003 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:01:41,003 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:01:41,003 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:01:41,004 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:01:41,004 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:01:41,004 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:01:41,004 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 17:01:42,049 [ERROR] [c.r.v.m.VideoCapturerDialog#AWT-EventQueue-2] - Error while initializing capturers
+java.lang.UnsatisfiedLinkError: Unable to load library 'ueye-nativelib': Kan opgegeven module niet vinden.
+
+	at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:169)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:242)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:205)
+	at com.runwalk.video.media.ueye.UEyeCapturerLibrary.<clinit>(UEyeCapturerLibrary.java:16)
+	at com.runwalk.video.media.ueye.UEyeCapturerFactory.getVideoCapturerNames(UEyeCapturerFactory.java:54)
+	at com.runwalk.video.media.CompositeVideoCapturerFactory.getVideoCapturerNames(CompositeVideoCapturerFactory.java:114)
+	at com.runwalk.video.media.VideoCapturerDialog.refreshVideoCapturers(VideoCapturerDialog.java:194)
+	at com.runwalk.video.media.VideoCapturerFactory.createVideoCapturer(VideoCapturerFactory.java:143)
+	at com.runwalk.video.media.CompositeVideoCapturerFactory.createVideoCapturer(CompositeVideoCapturerFactory.java:99)
+	at com.runwalk.video.media.MediaControls.startVideoCapturer(MediaControls.java:561)
+	at com.runwalk.video.RunwalkVideoApp.startup(RunwalkVideoApp.java:214)
+	at org.jdesktop.application.Application$1.run(Application.java:187)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:313)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:770)
+	at java.desktop/java.awt.EventQueue.access$600(EventQueue.java:97)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:715)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:87)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:740)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2020-08-30 17:23:00,310 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - deprecated_property
+2020-08-30 17:23:00,326 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - topLink_version
+2020-08-30 17:23:00,331 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connecting
+2020-08-30 17:23:00,347 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Gegevens inladen..
+2020-08-30 17:23:01,053 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connected_user_database_driver
+2020-08-30 17:23:01,053 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connecting
+2020-08-30 17:23:01,093 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connected_user_database_driver
+2020-08-30 17:23:01,131 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - login_successful
+2020-08-30 17:23:01,289 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - SELECT zip, city, state, country FROM ospos_people
+2020-08-30 17:23:02,555 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - SELECT t0.person_id, t0.type, t0.email, t0.first_name, t0.gender, t0.last_name, t0.phone_number, t0.VERSION, t0.address_1, t0.zip, t0.city, t0.state, t0.country, t1.person_id, t1.account_number, t1.company_name, t1.consent, MAX(t2.start_date) FROM ospos_people t0 LEFT OUTER JOIN ospos_analysis t2 ON (t2.person_id = t0.person_id), ospos_customers t1 WHERE ((t2.feedback_id IS NULL) AND ((t1.person_id = t0.person_id) AND (t0.type = ?))) GROUP BY t0.person_id
+	bind => [0]
+2020-08-30 17:23:02,680 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - deprecated_property
+2020-08-30 17:23:02,697 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - topLink_version
+2020-08-30 17:23:02,702 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connecting
+2020-08-30 17:23:02,714 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Gegevens inladen..
+2020-08-30 17:23:03,423 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connected_user_database_driver
+2020-08-30 17:23:03,424 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connecting
+2020-08-30 17:23:03,485 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connected_user_database_driver
+2020-08-30 17:23:03,520 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - login_successful
+2020-08-30 17:23:03,681 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - SELECT zip, city, state, country FROM ospos_people
+2020-08-30 17:23:04,558 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - deprecated_property
+2020-08-30 17:23:04,576 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - topLink_version
+2020-08-30 17:23:04,580 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connecting
+2020-08-30 17:23:04,590 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Gegevens inladen..
+2020-08-30 17:23:05,522 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connected_user_database_driver
+2020-08-30 17:23:05,524 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connecting
+2020-08-30 17:23:05,545 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - SELECT t0.person_id, t0.type, t0.email, t0.first_name, t0.gender, t0.last_name, t0.phone_number, t0.VERSION, t0.address_1, t0.zip, t0.city, t0.state, t0.country, t1.person_id, t1.account_number, t1.company_name, t1.consent, MAX(t2.start_date) FROM ospos_people t0 LEFT OUTER JOIN ospos_analysis t2 ON (t2.person_id = t0.person_id), ospos_customers t1 WHERE ((t2.feedback_id IS NULL) AND ((t1.person_id = t0.person_id) AND (t0.type = ?))) GROUP BY t0.person_id
+	bind => [0]
+2020-08-30 17:23:05,566 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connected_user_database_driver
+2020-08-30 17:23:05,627 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - login_successful
+2020-08-30 17:23:05,796 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - SELECT zip, city, state, country FROM ospos_people
+2020-08-30 17:23:06,683 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - deprecated_property
+2020-08-30 17:23:06,698 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - topLink_version
+2020-08-30 17:23:06,703 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connecting
+2020-08-30 17:23:06,718 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Gegevens inladen..
+2020-08-30 17:23:07,477 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connected_user_database_driver
+2020-08-30 17:23:07,478 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connecting
+2020-08-30 17:23:07,518 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connected_user_database_driver
+2020-08-30 17:23:07,553 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - login_successful
+2020-08-30 17:23:07,738 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - SELECT zip, city, state, country FROM ospos_people
+2020-08-30 17:23:08,190 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - SELECT t0.person_id, t0.type, t0.email, t0.first_name, t0.gender, t0.last_name, t0.phone_number, t0.VERSION, t0.address_1, t0.zip, t0.city, t0.state, t0.country, t1.person_id, t1.account_number, t1.company_name, t1.consent, MAX(t2.start_date) FROM ospos_people t0 LEFT OUTER JOIN ospos_analysis t2 ON (t2.person_id = t0.person_id), ospos_customers t1 WHERE ((t2.feedback_id IS NULL) AND ((t1.person_id = t0.person_id) AND (t0.type = ?))) GROUP BY t0.person_id
+	bind => [0]
+2020-08-30 17:23:09,168 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - SELECT t0.person_id, t0.type, t0.email, t0.first_name, t0.gender, t0.last_name, t0.phone_number, t0.VERSION, t0.address_1, t0.zip, t0.city, t0.state, t0.country, t1.person_id, t1.account_number, t1.company_name, t1.consent, MAX(t2.start_date) FROM ospos_people t0 LEFT OUTER JOIN ospos_analysis t2 ON (t2.person_id = t0.person_id), ospos_customers t1 WHERE ((t2.feedback_id IS NULL) AND ((t1.person_id = t0.person_id) AND (t0.type = ?))) GROUP BY t0.person_id
+	bind => [0]
+2020-08-30 17:23:10,544 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Gebruikersinterface up-to-date brengen..
+2020-08-30 17:23:10,641 [DEBUG] [c.r.v.a.BenchmarkInterceptor#pool-2-thread-1] - RefreshTask finished in 10s
+2020-08-30 17:23:10,712 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Inladen voltooid in 10 s.
+2020-08-30 17:23:15,363 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Gebruikersinterface up-to-date brengen..
+2020-08-30 17:23:15,385 [DEBUG] [c.r.v.a.BenchmarkInterceptor#pool-2-thread-1] - RefreshTask finished in 8668ms
+2020-08-30 17:23:15,419 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Inladen voltooid in 8 s.
+2020-08-30 17:23:17,895 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Gebruikersinterface up-to-date brengen..
+2020-08-30 17:23:17,916 [DEBUG] [c.r.v.a.BenchmarkInterceptor#pool-2-thread-1] - RefreshTask finished in 15s
+2020-08-30 17:23:17,949 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Inladen voltooid in 15 s.
+2020-08-30 17:23:18,581 [DEBUG] [c.r.v.RunwalkVideoApp#AWT-EventQueue-2] - Shutdown initiated...
+2020-08-30 17:23:18,592 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Saving application settings to file C:\Users\Jeroen\AppData\Roaming\Runwalk\Runwalk Herentals\settings.xml
+2020-08-30 17:23:18,618 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Taskservice shutting down...
+2020-08-30 17:23:18,619 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Waiting for tasks on EDT to end...
+2020-08-30 17:23:18,654 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Video input stoppen..
+2020-08-30 17:23:18,654 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Video input gestopt.
+2020-08-30 17:23:18,685 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - DaoService shutting down...
+2020-08-30 17:23:18,685 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AwaitShutdownThread] - disconnect
+2020-08-30 17:23:18,685 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AwaitShutdownThread] - logout_successful
+2020-08-30 17:23:18,686 [DEBUG] [c.r.v.RunwalkVideoApp#AwaitShutdownThread] - Taskservice terminated. byebye...
+2020-08-30 17:23:19,360 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Gebruikersinterface up-to-date brengen..
+2020-08-30 17:23:19,380 [DEBUG] [c.r.v.a.BenchmarkInterceptor#pool-2-thread-1] - RefreshTask finished in 14s
+2020-08-30 17:23:19,417 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Inladen voltooid in 14 s.
+2020-08-30 17:23:22,518 [DEBUG] [c.r.v.RunwalkVideoApp#AWT-EventQueue-2] - Shutdown initiated...
+2020-08-30 17:23:22,525 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Saving application settings to file C:\Users\Jeroen\AppData\Roaming\Runwalk\Runwalk Herentals\settings.xml
+2020-08-30 17:23:22,549 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Taskservice shutting down...
+2020-08-30 17:23:22,550 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Waiting for tasks on EDT to end...
+2020-08-30 17:23:22,585 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Video input stoppen..
+2020-08-30 17:23:22,585 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Video input gestopt.
+2020-08-30 17:23:22,609 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - DaoService shutting down...
+2020-08-30 17:23:22,610 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AwaitShutdownThread] - disconnect
+2020-08-30 17:23:22,610 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AwaitShutdownThread] - logout_successful
+2020-08-30 17:23:22,610 [DEBUG] [c.r.v.RunwalkVideoApp#AwaitShutdownThread] - Taskservice terminated. byebye...
+2020-08-30 17:23:24,783 [DEBUG] [c.r.v.RunwalkVideoApp#AWT-EventQueue-2] - Shutdown initiated...
+2020-08-30 17:23:24,792 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Saving application settings to file C:\Users\Jeroen\AppData\Roaming\Runwalk\Runwalk Herentals\settings.xml
+2020-08-30 17:23:24,812 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Taskservice shutting down...
+2020-08-30 17:23:24,812 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Waiting for tasks on EDT to end...
+2020-08-30 17:23:24,850 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Video input stoppen..
+2020-08-30 17:23:24,851 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Video input gestopt.
+2020-08-30 17:23:24,884 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - DaoService shutting down...
+2020-08-30 17:23:24,885 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AwaitShutdownThread] - disconnect
+2020-08-30 17:23:24,886 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AwaitShutdownThread] - logout_successful
+2020-08-30 17:23:24,886 [DEBUG] [c.r.v.RunwalkVideoApp#AwaitShutdownThread] - Taskservice terminated. byebye...
+2020-08-30 18:15:07,118 [DEBUG] [c.r.v.RunwalkVideoApp#AWT-EventQueue-2] - Shutdown initiated...
+2020-08-30 18:15:07,128 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Saving application settings to file C:\Users\Jeroen\AppData\Roaming\Runwalk\Runwalk Herentals\settings.xml
+2020-08-30 18:15:07,150 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Taskservice shutting down...
+2020-08-30 18:15:07,151 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Waiting for tasks on EDT to end...
+2020-08-30 18:15:07,368 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Video input stoppen..
+2020-08-30 18:15:07,368 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Video input gestopt.
+2020-08-30 18:15:07,434 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - DaoService shutting down...
+2020-08-30 18:15:07,435 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AwaitShutdownThread] - disconnect
+2020-08-30 18:15:07,435 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AwaitShutdownThread] - logout_successful
+2020-08-30 18:15:07,436 [DEBUG] [c.r.v.RunwalkVideoApp#AwaitShutdownThread] - Taskservice terminated. byebye...
+2020-08-30 18:16:45,036 [DEBUG] [c.r.v.s.SettingsManager#javawsApplicationMain] - Logging to file with location C:\Users\Jeroen\workspace\runwalkvideo\logs\runwalk-video-0.7.log
+2020-08-30 18:16:45,040 [INFO] [c.r.v.RunwalkVideoApp#javawsApplicationMain] - Detected platform is Windows
+2020-08-30 18:16:45,087 [INFO] [c.r.v.RunwalkVideoApp#AWT-EventQueue-2] - Starting runwalk-video 0.7 (29082020-230653)
+2020-08-30 18:16:45,095 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Scanning JAXB annotated classes ..
+2020-08-30 18:16:45,123 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Instantiating JAXB context..
+2020-08-30 18:16:45,264 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Initializing ApplicationSettings..
+2020-08-30 18:16:45,265 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Loading application settings from file C:\Users\Jeroen\AppData\Roaming\Runwalk\Runwalk Herentals\settings.xml
+2020-08-30 18:16:45,280 [ERROR] [c.r.v.u.AppUtil#AWT-EventQueue-2] - Directory Z:\runwalk-video\mount\runwalk-video\video couldn't be created.
+java.io.IOException: Unable to create directory Z:\runwalk-video\mount\runwalk-video\video
+	at org.apache.commons.io.FileUtils.forceMkdir(FileUtils.java:2384)
+	at com.runwalk.video.util.AppUtil.createDirectories(AppUtil.java:37)
+	at com.runwalk.video.settings.SettingsManager.getDirectory(SettingsManager.java:249)
+	at com.runwalk.video.settings.SettingsManager.getVideoDir(SettingsManager.java:212)
+	at com.runwalk.video.settings.SettingsManager.loadSettings(SettingsManager.java:160)
+	at com.runwalk.video.RunwalkVideoApp.initialize(RunwalkVideoApp.java:173)
+	at org.jdesktop.application.Application$1.run(Application.java:186)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue.access$600(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+2020-08-30 18:16:45,281 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Found videodir: C:\Users\Jeroen\workspace\runwalkvideo
+2020-08-30 18:16:45,281 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Found uncompressed videodir: C:\Users\Jeroen\workspace\runwalkvideo\uncompressed
+2020-08-30 18:16:45,550 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - deprecated_property
+2020-08-30 18:16:45,664 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,676 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 18:16:45,681 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 18:16:45,683 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 18:16:45,683 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,684 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,686 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,687 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 18:16:45,687 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,687 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,689 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,689 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 18:16:45,689 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,689 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_one_reference_class
+2020-08-30 18:16:45,690 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 18:16:45,691 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 18:16:45,691 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,691 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,692 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 18:16:45,692 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,692 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_many_reference_class
+2020-08-30 18:16:45,693 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 18:16:45,693 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,693 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,693 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 18:16:45,694 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_one_to_one_reference_class
+2020-08-30 18:16:45,694 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_many_to_one_reference_class
+2020-08-30 18:16:45,695 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,695 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,696 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,696 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,696 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,697 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_access_type
+2020-08-30 18:16:45,700 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 18:16:45,708 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 18:16:45,709 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 18:16:45,709 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 18:16:45,711 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_pk_column
+2020-08-30 18:16:45,712 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_fk_column
+2020-08-30 18:16:45,712 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_inheritance_discriminator_column
+2020-08-30 18:16:45,712 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 18:16:45,712 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 18:16:45,715 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 18:16:45,715 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 18:16:45,716 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 18:16:45,716 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 18:16:45,716 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 18:16:45,716 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 18:16:45,716 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 18:16:45,716 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_column
+2020-08-30 18:16:45,716 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 18:16:45,717 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_alias
+2020-08-30 18:16:45,723 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 18:16:45,723 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 18:16:45,731 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 18:16:45,731 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 18:16:45,731 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 18:16:45,731 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 18:16:45,731 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 18:16:45,731 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 18:16:45,732 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 18:16:45,732 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 18:16:45,732 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AWT-EventQueue-2] - metadata_default_pk_column
+2020-08-30 18:16:46,797 [ERROR] [c.r.v.m.VideoCapturerDialog#AWT-EventQueue-2] - Error while initializing capturers
+java.lang.UnsatisfiedLinkError: Unable to load library 'ueye-nativelib': Kan opgegeven module niet vinden.
+
+	at com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:169)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:242)
+	at com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:205)
+	at com.runwalk.video.media.ueye.UEyeCapturerLibrary.<clinit>(UEyeCapturerLibrary.java:16)
+	at com.runwalk.video.media.ueye.UEyeCapturerFactory.getVideoCapturerNames(UEyeCapturerFactory.java:54)
+	at com.runwalk.video.media.CompositeVideoCapturerFactory.getVideoCapturerNames(CompositeVideoCapturerFactory.java:114)
+	at com.runwalk.video.media.VideoCapturerDialog.refreshVideoCapturers(VideoCapturerDialog.java:194)
+	at com.runwalk.video.media.VideoCapturerFactory.createVideoCapturer(VideoCapturerFactory.java:143)
+	at com.runwalk.video.media.CompositeVideoCapturerFactory.createVideoCapturer(CompositeVideoCapturerFactory.java:99)
+	at com.runwalk.video.media.MediaControls.startVideoCapturer(MediaControls.java:561)
+	at com.runwalk.video.RunwalkVideoApp.startup(RunwalkVideoApp.java:214)
+	at org.jdesktop.application.Application$1.run(Application.java:187)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.desktop/java.awt.EventQueue.access$600(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.desktop/java.awt.EventQueue$4.run(Unknown Source)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- For assistance related to logback-translator or configuration  -->
+<!-- files in general, please contact the logback user mailing list -->
+<!-- at http://www.qos.ch/mailman/listinfo/logback-user             -->
+<!--                                                                -->
+<!-- For professional support please see                            -->
+<!--    http://www.qos.ch/shop/products/professionalSupport         -->
+<!--                                                                -->
+<configuration debug="true">
+    <!-- Errors were reported during translation. -->
+    <!-- Could not find transformer for com.runwalk.video.util.TimestampFileAppender -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%p] [%c#%t] - %m%n</pattern>
+        </encoder>
+    </appender>
+    <appender name="A1" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${user.dir:-.}\logs\runwalk-video-${project.version}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>${user.dir:-.}\logs\runwalk-video-${project.version}_%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{ISO8601} [%p] [%C{1}#%t] - %m%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="com.mchange.v2" level="WARN"/>
+    <logger name="com.sun.jna" level="DEBUG" />
+    <logger name="org.jdesktop.beansbinding" level="OFF" />
+    <root level="DEBUG">
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="A1"/>
+    </root>
+</configuration>

@@ -20,6 +20,9 @@ import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
 import javax.swing.event.UndoableEditListener;
 
+import com.sun.jna.internal.ReflectionUtils;
+import com.sun.jnlp.JNLPClassLoader;
+import com.sun.jnlp.JNLPClassLoaderUtil;
 import net.miginfocom.swing.MigLayout;
 
 import org.jdesktop.application.Application;
@@ -65,6 +68,7 @@ import com.runwalk.video.ui.actions.ApplicationActions;
 import com.runwalk.video.ui.actions.MediaActionConstants;
 import com.runwalk.video.util.AWTExceptionHandler;
 import com.tomtessier.scrollabledesktop.JScrollableDesktopPane;
+import org.jdesktop.el.impl.util.ReflectionUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -197,6 +201,7 @@ public class RunwalkVideoApp extends SingleFrameApplication implements Applicati
 		addTablePanel(recordingTablePanel);
 		// create main desktop scrollpane
 		scrollableDesktopPane = new JScrollableDesktopPane();
+
 		getMainFrame().add(getScrollableDesktopPane());
 		// create menu bar
 		menuBar = new VideoMenuBar();
@@ -513,14 +518,6 @@ public class RunwalkVideoApp extends SingleFrameApplication implements Applicati
 
 	public ActionMap getApplicationActionMap() {
 		return getActionMap(getApplicationActions());
-	}
-
-	public static class EclipseLinkLogger extends org.eclipse.persistence.logging.AbstractSessionLog {
-
-		public void log(org.eclipse.persistence.logging.SessionLogEntry arg0) {
-			LOGGER.debug(arg0.getMessage());
-		}
-
 	}
 
 }

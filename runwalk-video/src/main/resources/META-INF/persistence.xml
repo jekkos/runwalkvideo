@@ -22,7 +22,7 @@
  			<!-- need to call the StaticWeave class at build time -->
  			<!-- property name="eclipselink.weaving" value="static" -->
 		  	<property name="eclipselink.jdbc.driver" value="${jdbc.driverClass}" />
-			<property name="eclipselink.logging.logger" value="com.runwalk.video.RunwalkVideoApp$EclipseLinkLogger"/>
+			<property name="eclipselink.logging.logger" value="org.eclipse.persistence.logging.slf4j.SLF4JLogger"/>
 			<property name="eclipselink.logging.level.sql" value="FINE"/>
 			<property name="eclipselink.logging.parameters" value="true"/>
 		</properties>

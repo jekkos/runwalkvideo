@@ -25,10 +25,18 @@
             <pattern>%d{ISO8601} [%p] [%C{1}#%t] - %m%n</pattern>
         </encoder>
     </appender>
+
+    <contextListener class="ch.qos.logback.classic.jul.LevelChangePropagator">
+        <!-- reset all previous level configurations of all j.u.l. loggers -->
+        <resetJUL>true</resetJUL>
+    </contextListener>
+
     <logger name="com.mchange.v2" level="WARN"/>
     <logger name="com.sun.jna" level="DEBUG" />
     <logger name="org.jdesktop.beansbinding" level="OFF" />
-    <root level="DEBUG">
+    <logger name="com.runwalk" level="DEBUG" />
+
+    <root level="WARN">
         <appender-ref ref="stdout"/>
         <appender-ref ref="A1"/>
     </root>

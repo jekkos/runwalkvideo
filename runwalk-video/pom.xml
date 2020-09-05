@@ -80,6 +80,7 @@
 				<version>1.12.1</version>
 				<executions>
 					<execution>
+						<phase>compile</phase>
 						<goals>
 							<goal>compile</goal>       <!-- use this goal to weave all your main classes -->
 						</goals>
@@ -166,7 +167,7 @@
 						<storepass>${keystore.password}</storepass>
 						<!--storetype>fillme</storetype -->
 						<alias>jks</alias>
-						<validity>180</validity>
+						<validity>3650</validity>
 
 						<!-- only required for generating the keystore
 						<dnameCn>${keystore.dnameCn}</dnameCn> <dnameOu>${keystore.dnameOu}</dnameOu>
@@ -317,74 +318,6 @@
 				<version>3.4.0</version>
 			</extension>
 		</extensions>
-		<pluginManagement>
-			<plugins>
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
-					only. It has no influence on the Maven build itself. -->
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>org.apache.maven.plugins</groupId>
-										<artifactId>maven-dependency-plugin</artifactId>
-										<versionRange>[2.0,)</versionRange>
-										<goals>
-											<goal>unpack</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore />
-									</action>
-								</pluginExecution>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.reflections
-										</groupId>
-										<artifactId>
-											reflections-maven
-										</artifactId>
-										<versionRange>
-											[0.9.8,)
-										</versionRange>
-										<goals>
-											<goal>reflections</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore />
-									</action>
-								</pluginExecution>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>
-											org.codehaus.mojo
-										</groupId>
-										<artifactId>
-											aspectj-maven-plugin
-										</artifactId>
-										<versionRange>
-											[1.4,)
-										</versionRange>
-										<goals>
-											<goal>compile</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore />
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
 	</build>
 	<dependencies>
         <dependency>
@@ -401,6 +334,11 @@
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
 			<version>1.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>jul-to-slf4j</artifactId>
+			<version>1.7.22</version>
 		</dependency>
 		<dependency>
 			<groupId>com.google.collections</groupId>
@@ -427,7 +365,7 @@
 		<dependency>
 			<groupId>net.java.dev.jna</groupId>
 			<artifactId>jna</artifactId>
-			<version>5.6.0</version>
+			<version>5.5.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.runwalk</groupId>
@@ -495,7 +433,13 @@
 		<dependency>
 			<groupId>org.eclipse.persistence</groupId>
 			<artifactId>org.eclipse.persistence.jpa</artifactId>
-			<version>2.5.1</version>
+			<version>2.7.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>org.eclipse.persistence.extension</artifactId>
+			<version>2.7.0</version>
+			<scope>runtime</scope>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>

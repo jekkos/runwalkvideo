@@ -14,6 +14,7 @@ import org.jdesktop.application.utils.PlatformType;
 import org.jdesktop.beansbinding.ELProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -83,6 +84,9 @@ public class SettingsManager {
 
 		ch.qos.logback.classic.Logger rootLogger = (ch.qos.logback.classic.Logger) LoggerFactory.getLogger(Logger.ROOT_LOGGER_NAME);
 		FileAppender appender = (FileAppender) rootLogger.getAppender(FILE_APPENDER_NAME);
+
+		SLF4JBridgeHandler.removeHandlersForRootLogger();
+		SLF4JBridgeHandler.install();
 
 		SettingsManager.logger.debug("Logging to file with location " + appender.getFile());
 		org.jdesktop.beansbinding.util.logging.Logger.getLogger(ELProperty.class.getName()).setLevel(Level.SEVERE);

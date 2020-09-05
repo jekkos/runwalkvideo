@@ -869,3 +869,27 @@ java.lang.UnsatisfiedLinkError: Unable to load library 'ueye-nativelib': Kan opg
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(Unknown Source)
 	at java.desktop/java.awt.EventDispatchThread.run(Unknown Source)
+2020-08-30 20:01:40,670 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - deprecated_property
+2020-08-30 20:01:40,685 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - topLink_version
+2020-08-30 20:01:40,690 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connecting
+2020-08-30 20:01:40,704 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Gegevens inladen..
+2020-08-30 20:01:52,660 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connected_user_database_driver
+2020-08-30 20:01:52,661 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connecting
+2020-08-30 20:01:52,700 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - connected_user_database_driver
+2020-08-30 20:01:52,736 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - login_successful
+2020-08-30 20:01:52,906 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - SELECT zip, city, state, country FROM ospos_people
+2020-08-30 20:01:55,432 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#pool-2-thread-1] - SELECT t0.person_id, t0.type, t0.email, t0.first_name, t0.gender, t0.last_name, t0.phone_number, t0.VERSION, t0.address_1, t0.zip, t0.city, t0.state, t0.country, t1.person_id, t1.account_number, t1.company_name, t1.consent, MAX(t2.start_date) FROM ospos_people t0 LEFT OUTER JOIN ospos_analysis t2 ON (t2.person_id = t0.person_id), ospos_customers t1 WHERE ((t2.feedback_id IS NULL) AND ((t1.person_id = t0.person_id) AND (t0.type = ?))) GROUP BY t0.person_id
+	bind => [0]
+2020-08-30 20:02:01,944 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Gebruikersinterface up-to-date brengen..
+2020-08-30 20:02:01,964 [DEBUG] [c.r.v.a.BenchmarkInterceptor#pool-2-thread-1] - RefreshTask finished in 21s
+2020-08-30 20:02:01,997 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Inladen voltooid in 21 s.
+2020-08-30 20:02:08,405 [DEBUG] [c.r.v.RunwalkVideoApp#AWT-EventQueue-2] - Shutdown initiated...
+2020-08-30 20:02:08,412 [DEBUG] [c.r.v.s.SettingsManager#AWT-EventQueue-2] - Saving application settings to file C:\Users\Jeroen\AppData\Roaming\Runwalk\Runwalk Herentals\settings.xml
+2020-08-30 20:02:08,432 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Taskservice shutting down...
+2020-08-30 20:02:08,433 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - Waiting for tasks on EDT to end...
+2020-08-30 20:02:08,484 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Video input stoppen..
+2020-08-30 20:02:08,485 [INFO] [c.r.v.p.StatusPanel#AWT-EventQueue-2] - Video input gestopt.
+2020-08-30 20:02:08,510 [DEBUG] [c.r.v.RunwalkVideoApp$4#AwaitShutdownThread] - DaoService shutting down...
+2020-08-30 20:02:08,510 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AwaitShutdownThread] - disconnect
+2020-08-30 20:02:08,510 [DEBUG] [c.r.v.RunwalkVideoApp$EclipseLinkLogger#AwaitShutdownThread] - logout_successful
+2020-08-30 20:02:08,510 [DEBUG] [c.r.v.RunwalkVideoApp#AwaitShutdownThread] - Taskservice terminated. byebye...

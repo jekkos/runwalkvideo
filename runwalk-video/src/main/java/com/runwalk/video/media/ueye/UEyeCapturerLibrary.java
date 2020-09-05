@@ -6,15 +6,20 @@ import com.sun.jna.Pointer;
 import com.sun.jna.WString;
 import com.sun.jna.ptr.IntByReference;
 import com.sun.jna.win32.StdCallLibrary;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * JNA Wrapper for library <b>ueye-native-library</b><br>
  * This dll abstracts functionality delivered by {@link UEyeCapturerLibrary} and {@link UEyeLibrary}
  */
 public class UEyeCapturerLibrary implements StdCallLibrary {
 
+	private static Logger LOGGER = LoggerFactory.getLogger(UEyeCapturerLibrary.class.getName());
+
 	public static final String JNA_LIBRARY_NAME = "ueye-nativelib";
 	public static final NativeLibrary JNA_NATIVE_LIB = NativeLibrary.getInstance(UEyeCapturerLibrary.JNA_LIBRARY_NAME);
-	
+
 	public static final int INIT_SUCCESS = 0;
 	public static final int IS_INVALID_HANDLE = 1;
 	

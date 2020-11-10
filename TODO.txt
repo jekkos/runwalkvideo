@@ -1,0 +1,55 @@
+-pce in windowmanager moet telkens de toegevoegde items uit de menu bar verwijderen
+-pce in windowmanager moet in het geval van een wrapper component ook zijn wrapper verwijderen of onzichtbaar maken
+
+te beschrijven interfaces: 
+AppWindowWrapper - self contained component, native of niet - weave at compile time with the default app framework functionalities -- te gebruiken door AppInternalFrame, DSJComponent (fullscreen geval) en uEyeCapturer die self containing is in fullscreen mode althans
+
+in het geval van uEyeCapturer moet die getTitle() dan met en native call worden doorgegeven om de naam op het venster te krijgen
+--Component listener kan hier intern worden geimplementeerd met toggleVisibility() als action
+
+
+AppComponent (nog e goeie naam vinden?) -- te gebruiken door de MediaControls en MainView die dan gewrapped worden in een AppInternalFrame wat zelf wel self containing is, ook door DSJComponent (component geval) en JMCPlayer
+omwille van het feit dat er componenten soms self contained zijn en soms niet, moet dit best ook aparte interface zijn (zodat je allebei kan implementeren)
+getTitle()
+getApplicationActionMap() -- diene wordt gemerged met de action map van de wrapping window (AppInternalFrame), waarvan de added component zenne actionmap als parent wordt toegevoegd
+toevoegen van zo'n type klasse ondersteunen
+-- component listener moet op het niveau van de wrapping window (wrs AppInternalFrame) worden gedefinieerd, die kan dan de bound enabled property veranderen voor visibility..
+
+
+-----------------------------------------------------------------------------------------------------------------------
+
+
+1. self contained (UEyeCapturer, AppInternalFrame)			=> fullscreen window EN/OF niet fullscreen 	  => implementeer AppWindowWrapper
+2. niet self contained (JMCPlayer, MediaControls, MainView)		=> nooit fullscreen, wrappen met AppInternalFrame => creeer nieuwe interface hiervoor
+3. self contained EN niet self contained (bvb DSJCOmponent)		=> fullscreen of niet 				  => implementeer interface voor 1 en 2
+4. Interface 1 en 2 kunnen wel wat methods gemeen hebben?? => common functionaliteit naar een common interface pushen
+
+WINDOW WRAPPING
+1. wrappen gebeurt door de WindowManager die een method heeft met als argument interface 2 => addWindow( ... ) => welke methods hebben we daar nodig?
+2. Definieren van een ActionMap door het mergen van die van de AppInternalFrame (voor de TOGGLE_VISIBILITY) met die van <interface 2> 
+3. In het geval van een dispose() (unwrapping) => component onzichtbaar maken => hoe nieuwe actie terugkoppelen?
+
+VISIBILITY TOGGLING
+ENKEL de verantwoordelijkheid van self contained windows, concreet door ofwel implementeren van een ComponentListener of een andere manier van events opvangen
+1. AppInternalFrame
+2. DSJComponent (in het geval die fullscreen is)
+3. UEyeCapturer (hoe de events hier vastkrijgen?)
+
+FULLSCREEN TOGGLING
+verantwoordelijkheid van de implementatie zelf
+1. self contained: 		gewoon setFullScreen aanroepen en verder niks meer van aantrekken!
+2. niet self contained: 	niet implementeren
+3. self EN niet self contained (bvb DSjComponent):
+-moet gewrapped worden als van self contained naar niet self contained (eerst call naar setFullscreen, dan via bestaande logica window wrappen en tonen) 
+-moet unwrapped worden als van niet self contained naar self container (gewoon component vrijzetten, kijk oude showComponent() code hiervoor, dan call naar setFullscreen)
+-wrapping/unwrapping op het niveau van WindowManager
+
+BESCHRIJVING interfaces
+1. AppWindowWrapper 
+isVisible()
+setVisible()
+toggleVisibility()
+toFront()
+getTitle() - zodat de menu en mediacontrols de juiste titel kunnen weergeven
+
+2. 

@@ -752,8 +752,9 @@ public class MediaControls extends JPanel implements PropertyChangeListener, App
 			} else if (getFrontMostPlayer() != null && isPlaying()) {
 				// only update status info for the frontmost player
 				int position = getFrontMostPlayer().getPosition();
-				if ((position == 0 || position >= getFrontMostPlayer().getDuration()) && getFrontMostPlayer().isPlaying()) {
-					getLogger().debug("Video ended. Playback position set to 0.");
+				int duration = getFrontMostPlayer().getDuration();
+				if (position >= duration && getFrontMostPlayer().isPlaying()) {
+					getLogger().debug("Video ended. Playback position set to {} of {}.", position, duration);
 					invokeAction(STOP_ACTION, this);
 				}
 				setStatusInfo(position, getFrontMostPlayer().getDuration());

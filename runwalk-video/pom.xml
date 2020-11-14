@@ -271,12 +271,12 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 		        <artifactId>maven-antrun-plugin</artifactId>
-		        <version>1.7</version>
+		        <version>3.0.0</version>
 				<executions>
 					<execution>
 						<phase>deploy</phase>
 						<configuration>
-							<tasks>
+							<target>
 								<ftp server="${ftp.url}" remotedir="${ftp.remotedir}" userid="${ftp.user}" password="${ftp.password}" binary="yes" depends="yes" verbose="yes">
 									<fileset dir="${project.build.directory}">
 										<include name="lib/**/*.jar" />
@@ -284,7 +284,7 @@
 										<exclude name="lib/**/*.dll" />
 									</fileset>
 								</ftp>
-							</tasks>
+							</target>
 						</configuration>
 						<goals>
 							<goal>run</goal>

@@ -3,7 +3,7 @@
 	<groupId>com.runwalk</groupId>
 	<artifactId>runwalk-video</artifactId>
 	<packaging>jar</packaging>
-	<version>0.7.1</version>
+	<version>0.7.2-SNAPSHOT</version>
 	<name>runwalk-video</name>
 	<url>https://www.runwalk.be</url>
 	<description>Beheer van klanten en loopanalyses</description>
@@ -12,7 +12,7 @@
 		<connection>scm:git:ssh://git@github.com/jekkos/runwalkvideo.git</connection>
 		<developerConnection>scm:git:ssh://git@github.com/jekkos/runwalkvideo.git</developerConnection>
 		<url>scm:git:ssh://git@github.com/jekkos/runwalkvideo.git</url>
-		<tag>runwalk-video-0.7.1</tag>
+		<tag>${project.version}</tag>
 	</scm>
 	<organization>
 		<name>Runwalk Herentals</name>

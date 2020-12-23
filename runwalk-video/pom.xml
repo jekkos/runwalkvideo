@@ -9,11 +9,11 @@
 	<description>Beheer van klanten en loopanalyses</description>
 	<inceptionYear>2008</inceptionYear>
 	<scm>
-        <connection>scm:git:https://github.com/jekkos/runwalkvideo.git</connection>
-		<developerConnection>scm:git:https://github.com/jekkos/runwalkvideo.git</developerConnection>
-		<url>scm:git:https://github.com/jekkos/runwalkvideo.git</url>
-	  <tag>runwalk-video-0.7</tag>
-  </scm>
+		<connection>scm:git:ssh://git@github.com/jekkos/runwalkvideo.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/jekkos/runwalkvideo.git</developerConnection>
+		<url>scm:git:ssh://git@github.com/jekkos/runwalkvideo.git</url>
+		<tag>${project.version}</tag>
+	</scm>
 	<organization>
 		<name>Runwalk Herentals</name>
 		<url>https://www.runwalk.be</url>

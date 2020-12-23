@@ -20,9 +20,6 @@ import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
 import javax.swing.event.UndoableEditListener;
 
-import com.sun.jna.internal.ReflectionUtils;
-import com.sun.jnlp.JNLPClassLoader;
-import com.sun.jnlp.JNLPClassLoaderUtil;
 import net.miginfocom.swing.MigLayout;
 
 import org.jdesktop.application.Application;

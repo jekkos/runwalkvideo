@@ -1,13 +1,17 @@
 package com.runwalk.video.tasks;
 
 import java.io.File;
+import java.util.Date;
 
 import com.runwalk.video.dao.DaoService;
+import com.runwalk.video.entities.Analysis;
+import com.runwalk.video.entities.Customer;
 import com.runwalk.video.entities.Recording;
 import com.runwalk.video.entities.RecordingStatus;
 import com.runwalk.video.io.VideoFileManager;
 import com.runwalk.video.media.VideoCapturer;
 import com.runwalk.video.model.AnalysisModel;
+import com.runwalk.video.util.AppUtil;
 
 public class RecordTask extends AbstractTask<Boolean, Void> {
 
@@ -38,13 +42,24 @@ public class RecordTask extends AbstractTask<Boolean, Void> {
 		}
 		return stopRecording();
 	}
+
+	public String buildFileName(Analysis analysis) {
+		String date = AppUtil.formatDate(analysis.getCreationDate(), AppUtil.FILENAME_DATE_FORMATTER);
+		String prefix = analysis.getRecordings().size() == 0 ? "" : analysis.getRecordings().size() + "_";
+		Customer customer = analysis.getCustomer();
+		return new StringBuilder(prefix).append(customer.getName()).append("_")
+				.append(customer.getFirstname()).append("_").append(date)
+				.append(Recording.VIDEO_CONTAINER_FORMAT)
+				.toString().replaceAll(" ", "_");
+	}
 	
 	/**
 	 * Start recording.
 	 */
 	private void startRecording() {
 		for (VideoCapturer capturer : getCapturers()) {
-			Recording recording = new Recording(getAnalysisModel().getEntity());
+			Analysis analysis = getAnalysisModel().getEntity();
+			Recording recording = new Recording(analysis, buildFileName(analysis));
 			// persist recording first, then add it to the analysis
 			getDaoService().getDao(Recording.class).persist(recording);
 			getAnalysisModel().addRecording(recording);

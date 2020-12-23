@@ -55,9 +55,9 @@ public class VideoPlayer extends VideoComponent {
 		setState(State.IDLE);
 		// clear all previously drawn overlays
 		clearOverlayImage();
+		getVideoImpl().stop();
 		// set position to 0 here and for player this instance and its 'native' implementation
 		setPosition(0);
-		getVideoImpl().stop();
 	}
 
 	private void clearOverlayImage() {

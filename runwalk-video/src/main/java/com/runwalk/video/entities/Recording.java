@@ -51,24 +51,9 @@ public class Recording extends SerializableEntity<Recording> {
 
 	protected Recording() { }
 
-	public Recording(Analysis analysis) {
-		// TODO should move this logic out of here!!
-		Customer customer = analysis.getCustomer();
-		int totalRecordings = 0;
-		for (Analysis an : customer.getAnalyses()) {
-			totalRecordings += an.getRecordings().size();
-		}
-		this.videoFileName = buildFileName(analysis.getCustomer(), analysis.getCreationDate(), totalRecordings);
+	public Recording(Analysis analysis, String videoFileName) {
+		this.videoFileName = videoFileName;
 		this.analysis = analysis;
-	}
-	
-	private String buildFileName(Customer customer, Date creationDate, int totalRecordings) {
-		String date = AppUtil.formatDate(creationDate, AppUtil.FILENAME_DATE_FORMATTER);
-		String prefix = totalRecordings == 0 ? "" : totalRecordings + "_";
-		return new StringBuilder(prefix).append(customer.getName()).append("_")
-				.append(customer.getFirstname()).append("_").append(date)
-				.append(Recording.VIDEO_CONTAINER_FORMAT)
-				.toString().replaceAll(" ", "_");
 	}
 
 	public Long getId() {

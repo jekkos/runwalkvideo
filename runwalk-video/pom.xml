@@ -3,7 +3,7 @@
 	<groupId>com.runwalk</groupId>
 	<artifactId>runwalk-video</artifactId>
 	<packaging>jar</packaging>
-	<version>0.7</version>
+	<version>0.7.1-SNAPSHOT</version>
 	<name>runwalk-video</name>
 	<url>https://www.runwalk.be</url>
 	<description>Beheer van klanten en loopanalyses</description>
@@ -91,11 +91,6 @@
 					<complianceLevel>1.8</complianceLevel>
 					<source>1.8</source>
 					<target>1.8</target>
-					<sources>
-						<source>
-							<basedir>src/main/aspect</basedir>
-						</source>
-					</sources>
 				</configuration>
 				<dependencies>
 					<dependency>

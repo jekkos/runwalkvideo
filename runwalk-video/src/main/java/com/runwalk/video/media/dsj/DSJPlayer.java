@@ -3,12 +3,14 @@ package com.runwalk.video.media.dsj;
 import java.awt.Container;
 import java.awt.KeyboardFocusManager;
 import java.awt.Window;
+import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import javax.swing.JInternalFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
+import de.humatic.dsj.DSConstants;
 import org.jdesktop.application.Action;
 
 import com.runwalk.video.media.settings.VideoPlayerSettings;
@@ -17,7 +19,7 @@ import de.humatic.dsj.DSJException;
 import de.humatic.dsj.DSJUtils;
 import de.humatic.dsj.DSMovie;
 
-public class DSJPlayer extends AbstractDSJPlayer<DSMovie> {
+public class DSJPlayer extends AbstractDSJPlayer<DSMovie> implements PropertyChangeListener {
 
 	private boolean customFramerateEnabled = false;
 
@@ -30,28 +32,29 @@ public class DSJPlayer extends AbstractDSJPlayer<DSMovie> {
 	public DSJPlayer(String path, int flags, PropertyChangeListener listener) {
 		loadVideo(path, flags, listener);
 	}
-	
+
 	public boolean loadVideo(String path) {
-		return loadVideo(path, FLAGS, null);
+		return loadVideo(path, FLAGS, this);
 	}
-	
+
 	public boolean loadVideo(String path, int flags, PropertyChangeListener listener) {
 		boolean rebuilt = getFiltergraph() == null;
 		try {
+			int[] fileStats = DSJUtils.getBasicFileStats(path);
+			int fourCc = fileStats[5];
 			if (rebuilt) {
 				initFiltergraph(path, flags, listener);
 			} else {
 				// do not reload video if fourCc is not the same
-				int[] fileStats = DSJUtils.getBasicFileStats(path);
-				int fourCc = fileStats[5];
 				if (fourCc != -1 && this.fourCc == fourCc) {
 					rebuilt = getFiltergraph().loadFile(path , 0) < 0;
 				} else {
-					getLogger().debug("FourCc was " + this.fourCc + " and will be set to " + fourCc);
+					getLogger().debug("FourCc was {} and will be set to {}", this.fourCc, fourCc);
 					rebuilt = rebuildFiltergraph(path, flags, listener);
 				}
-				this.fourCc = fourCc;
 			}
+			getLogger().trace("DSMovie created: {}", getFiltergraph().getInfo());
+			this.fourCc = fourCc;
 		} catch(DSJException e) {
 			getLogger().error("Recording initialization failed.", e);
 			rebuilt = rebuildFiltergraph(path, flags, listener);
@@ -85,7 +88,6 @@ public class DSJPlayer extends AbstractDSJPlayer<DSMovie> {
 		if (isCustomFramerateEnabled()) {
 			getFiltergraph().setMasterFrameRate(getVideoComponentSettings().getFrameRate());
 		}
-		getFiltergraph().setRecueOnStop(true);
 	}
 
 	@Action
@@ -121,4 +123,10 @@ public class DSJPlayer extends AbstractDSJPlayer<DSMovie> {
 		this.customFramerateEnabled = customFramerateEnabled;
 	}
 
+	@Override
+	public void propertyChange(PropertyChangeEvent evt) {
+		int eventType = DSJUtils.getEventType(evt);
+		String eventToString = DSConstants.eventToString(DSJUtils.getEventValue_int(evt));
+		getLogger().trace("Graph eventType {}: {}", eventType, eventToString);
+	}
 }
